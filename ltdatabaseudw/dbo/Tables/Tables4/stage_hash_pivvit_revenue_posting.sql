@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[stage_hash_pivvit_revenue_posting] (
+    [stage_hash_pivvit_revenue_posting_id] BIGINT          IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                              CHAR (32)       NOT NULL,
+    [company_id]                           VARCHAR (50)    NULL,
+    [cost_center_id]                       VARCHAR (100)   NULL,
+    [currency_id]                          VARCHAR (50)    NULL,
+    [posted_date]                          VARCHAR (29)    NULL,
+    [club_id]                              VARCHAR (5)     NULL,
+    [pivvit_order_number]                  VARCHAR (10)    NULL,
+    [pivvit_line_number]                   VARCHAR (10)    NULL,
+    [product_amount]                       DECIMAL (10, 2) NULL,
+    [tax_amount]                           DECIMAL (10, 2) NULL,
+    [discount_amount]                      DECIMAL (10, 2) NULL,
+    [discount_reason_text]                 VARCHAR (200)   NULL,
+    [transaction_lineamount]               DECIMAL (26, 2) NULL,
+    [transaction_line_category_id]         VARCHAR (8)     NULL,
+    [transaction_memo]                     VARCHAR (8)     NULL,
+    [mms_member_id]                        VARCHAR (20)    NULL,
+    [mms_product_code]                     INT             NULL,
+    [offering_id]                          NVARCHAR (20)   NULL,
+    [tender_type_id]                       VARCHAR (20)    NULL,
+    [transaction_date]                     VARCHAR (29)    NULL,
+    [transaction_id]                       NVARCHAR (50)   NULL,
+    [transaction_amount]                   DECIMAL (26, 2) NULL,
+    [batch_id]                             INT             NULL,
+    [batch_close_datetime]                 VARCHAR (20)    NULL,
+    [batch_submitted_datetime]             VARCHAR (20)    NULL,
+    [dummy_modified_date_time]             DATETIME        NULL,
+    [dv_load_date_time]                    DATETIME        NOT NULL,
+    [dv_batch_id]                          BIGINT          NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([bk_hash]));
+

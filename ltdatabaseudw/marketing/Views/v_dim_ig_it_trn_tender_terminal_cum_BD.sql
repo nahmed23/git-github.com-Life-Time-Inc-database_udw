@@ -1,0 +1,20 @@
+﻿CREATE VIEW [marketing].[v_dim_ig_it_trn_tender_terminal_cum_BD]
+AS select d_ig_it_trn_tender_terminal_cum_BD.dim_ig_it_trn_tender_terminal_cum_BD_key dim_ig_it_trn_tender_terminal_cum_BD_key,
+       d_ig_it_trn_tender_terminal_cum_BD.bus_day_id bus_day_id,
+       d_ig_it_trn_tender_terminal_cum_BD.check_type_id check_type_id,
+       d_ig_it_trn_tender_terminal_cum_BD.meal_period_id meal_period_id,
+       d_ig_it_trn_tender_terminal_cum_BD.profit_center_id profit_center_id,
+       d_ig_it_trn_tender_terminal_cum_BD.tender_id tender_id,
+       d_ig_it_trn_tender_terminal_cum_BD.term_id term_id,
+       d_ig_it_trn_tender_terminal_cum_BD.void_type_id void_type_id,
+       d_ig_it_trn_tender_terminal_cum_BD.base_tender_amount base_tender_amount,
+       d_ig_it_trn_tender_terminal_cum_BD.breakage_amount breakage_amount,
+       d_ig_it_trn_tender_terminal_cum_BD.cash_drop_amount cash_drop_amount,
+       d_ig_it_trn_tender_terminal_cum_BD.change_amount change_amount,
+       d_ig_it_trn_tender_terminal_cum_BD.loan_amount loan_amount,
+       d_ig_it_trn_tender_terminal_cum_BD.paid_out_amount paid_out_amount,
+       d_ig_it_trn_tender_terminal_cum_BD.received_current_amount received_current_amount,
+       d_ig_it_trn_tender_terminal_cum_BD.tender_quantity tender_quantity,
+       d_ig_it_trn_tender_terminal_cum_BD.tip_amount tip_amount,
+       d_ig_it_trn_tender_terminal_cum_BD.withdrawal_amount withdrawal_amount
+  from dbo.d_ig_it_trn_tender_terminal_cum_BD;

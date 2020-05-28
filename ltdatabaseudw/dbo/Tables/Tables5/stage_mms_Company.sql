@@ -1,0 +1,31 @@
+﻿CREATE TABLE [dbo].[stage_mms_Company] (
+    [stage_mms_Company_id]        BIGINT         NOT NULL,
+    [CompanyID]                   INT            NULL,
+    [AccountRepInitials]          VARCHAR (5)    NULL,
+    [CompanyName]                 VARCHAR (50)   NULL,
+    [PrintUsageReportFlag]        BIT            NULL,
+    [CorporateCode]               VARCHAR (50)   NULL,
+    [InsertedDateTime]            DATETIME       NULL,
+    [StartDate]                   DATETIME       NULL,
+    [EndDate]                     DATETIME       NULL,
+    [AccountRepName]              VARCHAR (50)   NULL,
+    [InitiationFee]               NUMERIC (8, 4) NULL,
+    [UpdatedDateTime]             DATETIME       NULL,
+    [EnrollmentDiscPercentage]    NUMERIC (7, 4) NULL,
+    [MACEnrollmentDiscPercentage] NUMERIC (7, 4) NULL,
+    [InvoiceFlag]                 BIT            NULL,
+    [DollarDiscount]              NUMERIC (8, 4) NULL,
+    [AdminFee]                    NUMERIC (8, 4) NULL,
+    [OverridePercentage]          NUMERIC (7, 4) NULL,
+    [EFTAccountNumber]            VARCHAR (4)    NULL,
+    [UsageReportFlag]             BIT            NULL,
+    [ReportToEmailAddress]        VARCHAR (150)  NULL,
+    [UsageReportMemberType]       VARCHAR (50)   NULL,
+    [SmallBusinessFlag]           BIT            NULL,
+    [AccountOwner]                VARCHAR (100)  NULL,
+    [SubsidyMeasurement]          VARCHAR (30)   NULL,
+    [OpportunityRecordType]       VARCHAR (50)   NULL,
+    [dv_batch_id]                 BIGINT         NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = ROUND_ROBIN);
+

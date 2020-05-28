@@ -1,0 +1,22 @@
+﻿CREATE VIEW [marketing].[v_fact_lifetime_measurement]
+AS select fact_trainerize_measurement.active_flag active_flag,
+       fact_trainerize_measurement.certified_flag certified_flag,
+       fact_trainerize_measurement.created_by_dim_employee_key created_by_dim_employee_key,
+       fact_trainerize_measurement.created_dim_date_key created_dim_date_key,
+       fact_trainerize_measurement.dim_club_key dim_club_key,
+       fact_trainerize_measurement.dim_mms_member_key dim_mms_member_key,
+       fact_trainerize_measurement.dim_trainerize_measure_key dim_trainerize_measure_key,
+       fact_trainerize_measurement.fact_trainerize_measurement_key fact_trainerize_measurement_key,
+       fact_trainerize_measurement.measure_value measure_value,
+       fact_trainerize_measurement.measurement_dim_date_key measurement_dim_date_key,
+       fact_trainerize_measurement.measurement_dim_time_key measurement_dim_time_key,
+       fact_trainerize_measurement.measurement_id measurement_id,
+       fact_trainerize_measurement.measurement_recording_id measurement_recording_id,
+       fact_trainerize_measurement.metadata metadata,
+       fact_trainerize_measurement.modified_by_dim_employee_key modified_by_dim_employee_key,
+       fact_trainerize_measurement.modified_dim_date_key modified_dim_date_key,
+       fact_trainerize_measurement.notes notes,
+       fact_trainerize_measurement.source source,
+       fact_trainerize_measurement.unit unit,
+       fact_trainerize_measurement.user_program_status_id user_program_status_id
+  from dbo.fact_trainerize_measurement;

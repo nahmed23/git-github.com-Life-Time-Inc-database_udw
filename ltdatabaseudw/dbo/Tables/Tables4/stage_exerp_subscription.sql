@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[stage_exerp_subscription] (
+    [stage_exerp_subscription_id] BIGINT          NOT NULL,
+    [person_id]                   VARCHAR (4000)  NULL,
+    [id]                          VARCHAR (4000)  NULL,
+    [center_id]                   INT             NULL,
+    [state]                       VARCHAR (4000)  NULL,
+    [sub_state]                   VARCHAR (4000)  NULL,
+    [renewal_type]                VARCHAR (4000)  NULL,
+    [product_id]                  VARCHAR (4000)  NULL,
+    [start_date]                  DATETIME        NULL,
+    [stop_datetime]               DATETIME        NULL,
+    [end_date]                    DATETIME        NULL,
+    [billed_until_date]           DATETIME        NULL,
+    [binding_end_date]            DATETIME        NULL,
+    [creation_datetime]           DATETIME        NULL,
+    [price]                       DECIMAL (26, 6) NULL,
+    [binding_price]               DECIMAL (26, 6) NULL,
+    [requires_main]               BIT             NULL,
+    [price_update_excluded]       BIT             NULL,
+    [type_price_update_excluded]  BIT             NULL,
+    [freeze_period_product_id]    VARCHAR (4000)  NULL,
+    [transfer_subscription_id]    VARCHAR (4000)  NULL,
+    [extension_subscription_id]   VARCHAR (4000)  NULL,
+    [period_unit]                 VARCHAR (4000)  NULL,
+    [period_count]                INT             NULL,
+    [reassign_subscription_id]    VARCHAR (4000)  NULL,
+    [stop_person_id]              VARCHAR (4000)  NULL,
+    [stop_cancel_datetime]        DATETIME        NULL,
+    [ets]                         BIGINT          NULL,
+    [dv_batch_id]                 BIGINT          NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = ROUND_ROBIN);
+

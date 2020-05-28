@@ -1,0 +1,16 @@
+﻿CREATE VIEW [marketing].[v_dim_exerp_booking_recurrence] AS select dim_exerp_booking_recurrence.booking_name booking_name,
+       dim_exerp_booking_recurrence.class_capacity class_capacity,
+       dim_exerp_booking_recurrence.color color,
+       dim_exerp_booking_recurrence.comment comment,
+       dim_exerp_booking_recurrence.description description,
+       dim_exerp_booking_recurrence.dim_club_key dim_club_key,
+       dim_exerp_booking_recurrence.dim_exerp_activity_key dim_exerp_activity_key,
+       dim_exerp_booking_recurrence.dim_exerp_booking_recurrence_key dim_exerp_booking_recurrence_key,
+       dim_exerp_booking_recurrence.main_booking_id main_booking_id,
+       dim_exerp_booking_recurrence.recurrence recurrence,
+       dim_exerp_booking_recurrence.recurrence_end_dim_date_key recurrence_end_dim_date_key,
+       dim_exerp_booking_recurrence.recurrence_end_dim_time_key recurrence_end_dim_time_key,
+       dim_exerp_booking_recurrence.recurrence_start_dim_date_key recurrence_start_dim_date_key,
+       dim_exerp_booking_recurrence.recurrence_start_dim_time_key recurrence_start_dim_time_key,
+       dim_exerp_booking_recurrence.recurrence_type recurrence_type
+  from dbo.dim_exerp_booking_recurrence;

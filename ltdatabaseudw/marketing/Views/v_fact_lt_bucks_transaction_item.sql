@@ -1,0 +1,16 @@
+﻿CREATE VIEW [marketing].[v_fact_lt_bucks_transaction_item] AS select fact_lt_bucks_transaction_item.fact_lt_bucks_transaction_item_key fact_lt_bucks_transaction_item_key,
+       fact_lt_bucks_transaction_item.cart_id cart_id,
+       fact_lt_bucks_transaction_item.bucks_amount bucks_amount,
+       fact_lt_bucks_transaction_item.cart_detail_id cart_detail_id,
+       fact_lt_bucks_transaction_item.cart_name cart_name,
+       fact_lt_bucks_transaction_item.delivery_date_time delivery_date_time,
+       fact_lt_bucks_transaction_item.dim_club_key dim_club_key,
+       fact_lt_bucks_transaction_item.dim_lt_bucks_product_option_key dim_lt_bucks_product_option_key,
+       fact_lt_bucks_transaction_item.fact_mms_package_key fact_mms_package_key,
+       fact_lt_bucks_transaction_item.fact_mms_sales_transaction_key fact_mms_sales_transaction_key,
+       fact_lt_bucks_transaction_item.product_sku product_sku,
+       fact_lt_bucks_transaction_item.quantity quantity,
+       fact_lt_bucks_transaction_item.session_id session_id,
+       fact_lt_bucks_transaction_item.transaction_date_time transaction_date_time,
+       fact_lt_bucks_transaction_item.transaction_expiration_date_time transaction_expiration_date_time
+  from dbo.fact_lt_bucks_transaction_item;

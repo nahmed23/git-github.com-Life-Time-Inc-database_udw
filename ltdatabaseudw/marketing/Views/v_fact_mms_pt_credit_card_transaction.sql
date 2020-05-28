@@ -1,0 +1,16 @@
+﻿CREATE VIEW [marketing].[v_fact_mms_pt_credit_card_transaction] AS select d_mms_pt_credit_card_transaction.fact_mms_pt_credit_card_transaction_key fact_mms_pt_credit_card_transaction_key,
+       d_mms_pt_credit_card_transaction.pt_credit_card_transaction_id pt_credit_card_transaction_id,
+       d_mms_pt_credit_card_transaction.authorization_code authorization_code,
+       d_mms_pt_credit_card_transaction.card_type card_type,
+       d_mms_pt_credit_card_transaction.credit_card_last_four_digits credit_card_last_four_digits,
+       d_mms_pt_credit_card_transaction.dim_mms_member_key dim_mms_member_key,
+       d_mms_pt_credit_card_transaction.fact_mms_payment_key fact_mms_payment_key,
+       d_mms_pt_credit_card_transaction.fact_mms_pt_credit_card_batch_key fact_mms_pt_credit_card_batch_key,
+       d_mms_pt_credit_card_transaction.masked_account_number masked_account_number,
+       d_mms_pt_credit_card_transaction.transaction_amount transaction_amount,
+       d_mms_pt_credit_card_transaction.transaction_code transaction_code,
+       d_mms_pt_credit_card_transaction.transaction_date_time transaction_date_time,
+       d_mms_pt_credit_card_transaction.transaction_dim_date_key transaction_dim_date_key,
+       d_mms_pt_credit_card_transaction.transaction_dim_time_key transaction_dim_time_key,
+       d_mms_pt_credit_card_transaction.voided_flag voided_flag
+  from dbo.d_mms_pt_credit_card_transaction;

@@ -1,0 +1,16 @@
+﻿CREATE VIEW [marketing].[v_dim_spabiz_payment_type] AS select d_spabiz_payment_types.dim_spabiz_payment_type_key dim_spabiz_payment_type_key,
+       d_spabiz_payment_types.payment_type_id payment_type_id,
+       d_spabiz_payment_types.store_number store_number,
+       d_spabiz_payment_types.bank_depositable_flag bank_depositable_flag,
+       d_spabiz_payment_types.created_date_time created_date_time,
+       d_spabiz_payment_types.deleted_date_time deleted_date_time,
+       d_spabiz_payment_types.deleted_flag deleted_flag,
+       d_spabiz_payment_types.dim_spabiz_store_key dim_spabiz_store_key,
+       d_spabiz_payment_types.edit_date_time edit_date_time,
+       d_spabiz_payment_types.enabled_flag enabled_flag,
+       d_spabiz_payment_types.name name,
+       d_spabiz_payment_types.non_revenue_flag non_revenue_flag,
+       d_spabiz_payment_types.pop_drawer_flag pop_drawer_flag,
+       d_spabiz_payment_types.sort_order sort_order,
+       d_spabiz_payment_types.verify_credit_card_flag verify_credit_card_flag
+  from dbo.d_spabiz_payment_types;

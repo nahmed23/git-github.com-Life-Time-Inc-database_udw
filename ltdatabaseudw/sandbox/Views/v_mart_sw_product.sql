@@ -1,0 +1,21 @@
+﻿CREATE VIEW [sandbox].[v_mart_sw_product]
+AS SELECT d_mms_product.[product_id]
+       , d_mms_product.[department_id]
+       , d_mms_product.[val_product_status_id]
+       , d_mms_product.[name]
+       , d_mms_product.[description]
+       , d_mms_product.[assess_as_dues_flag]
+       , d_mms_department.[department_description]
+       , d_mms_department.[distribution_list]
+       , d_mms_product.[workday_cost_center]
+       , d_mms_product.[workday_offering]
+       , d_mms_product.[revenue_category]
+       , d_mms_product.[gl_account_number]
+       , d_mms_product.[gl_sub_account_number]
+       , d_mms_product.[lt_buck_eligible]
+       , d_mms_product.[lt_buck_cost_percent]
+       , [dim_mms_product_key]    = d_mms_product.[bk_hash]
+       , [dim_mms_department_key] = d_mms_department.[bk_hash]
+    FROM [sandbox].[v_mart_mms_product] d_mms_product
+         INNER JOIN [sandbox].[v_mart_mms_department] d_mms_department
+           ON d_mms_department.[department_id] = d_mms_product.[department_id];

@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[s_mms_reimbursement_program_identifier_format_part] (
+    [s_mms_reimbursement_program_identifier_format_part_id] BIGINT        IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                                               CHAR (32)     NOT NULL,
+    [reimbursement_program_identifier_format_part_id]       INT           NULL,
+    [field_name]                                            VARCHAR (50)  NULL,
+    [field_size]                                            SMALLINT      NULL,
+    [field_validation_rule]                                 VARCHAR (500) NULL,
+    [field_validation_error_message]                        VARCHAR (255) NULL,
+    [field_sequence]                                        INT           NULL,
+    [inserted_date_time]                                    DATETIME      NULL,
+    [updated_date_time]                                     DATETIME      NULL,
+    [dv_load_date_time]                                     DATETIME      NOT NULL,
+    [dv_r_load_source_id]                                   BIGINT        NOT NULL,
+    [dv_inserted_date_time]                                 DATETIME      NOT NULL,
+    [dv_insert_user]                                        VARCHAR (50)  NOT NULL,
+    [dv_updated_date_time]                                  DATETIME      NULL,
+    [dv_update_user]                                        VARCHAR (50)  NULL,
+    [dv_hash]                                               CHAR (32)     NOT NULL,
+    [dv_batch_id]                                           BIGINT        NOT NULL
+)
+WITH (CLUSTERED INDEX([bk_hash]), DISTRIBUTION = HASH([bk_hash]));
+
+
+GO
+CREATE NONCLUSTERED INDEX [ix_dv_batch_id]
+    ON [dbo].[s_mms_reimbursement_program_identifier_format_part]([dv_batch_id] ASC);
+

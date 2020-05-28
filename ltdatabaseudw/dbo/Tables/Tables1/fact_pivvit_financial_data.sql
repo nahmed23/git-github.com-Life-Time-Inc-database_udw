@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[fact_pivvit_financial_data] (
+    [fact_pivvit_financial_data_id]  BIGINT          IDENTITY (1, 1) NOT NULL,
+    [fact_pivvit_financial_data_key] CHAR (32)       NULL,
+    [club_id]                        INT             NULL,
+    [company_id]                     VARCHAR (20)    NULL,
+    [cost_center_id]                 VARCHAR (20)    NULL,
+    [currency_id]                    VARCHAR (20)    NULL,
+    [discount_amount]                DECIMAL (10, 2) NULL,
+    [offering_id]                    VARCHAR (20)    NULL,
+    [posted_date]                    DATE            NULL,
+    [region_id]                      VARCHAR (10)    NULL,
+    [tax_amount]                     DECIMAL (10, 2) NULL,
+    [tender_type_id]                 VARCHAR (20)    NULL,
+    [transaction_amount]             DECIMAL (26, 2) NULL,
+    [transaction_date]               DATE            NULL,
+    [transaction_id]                 VARCHAR (100)   NULL,
+    [transaction_line_category_id]   VARCHAR (50)    NULL,
+    [transaction_line_memo]          VARCHAR (200)   NULL,
+    [transaction_lineamount]         DECIMAL (26, 2) NULL,
+    [transaction_memo]               VARCHAR (200)   NULL,
+    [dv_load_date_time]              DATETIME        NULL,
+    [dv_load_end_date_time]          DATETIME        NULL,
+    [dv_batch_id]                    BIGINT          NOT NULL,
+    [dv_inserted_date_time]          DATETIME        NOT NULL,
+    [dv_insert_user]                 VARCHAR (50)    NOT NULL,
+    [dv_updated_date_time]           DATETIME        NULL,
+    [dv_update_user]                 VARCHAR (50)    NULL
+)
+WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = HASH([fact_pivvit_financial_data_key]));
+

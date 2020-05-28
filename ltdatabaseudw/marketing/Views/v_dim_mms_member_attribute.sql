@@ -1,0 +1,23 @@
+﻿CREATE VIEW [marketing].[v_dim_mms_member_attribute]
+AS select d_mms_member_attribute.member_attribute_id member_attribute_id,
+       d_mms_member_attribute.attribute_value attribute_value,
+       d_mms_member_attribute.dim_mms_member_key dim_mms_member_key,
+       d_mms_member_attribute.effective_from_date_time effective_from_date_time,
+       d_mms_member_attribute.effective_from_dim_date_key effective_from_dim_date_key,
+       d_mms_member_attribute.effective_from_dim_time_key effective_from_dim_time_key,
+       d_mms_member_attribute.effective_thru_date_time effective_thru_date_time,
+       d_mms_member_attribute.effective_thru_dim_date_key effective_thru_dim_date_key,
+       d_mms_member_attribute.effective_thru_dim_time_key effective_thru_dim_time_key,
+       d_mms_member_attribute.expiration_date expiration_date,
+       d_mms_member_attribute.expiration_dim_date_key expiration_dim_date_key,
+       d_mms_member_attribute.expiration_dim_time_key expiration_dim_time_key,
+       d_mms_member_attribute.inserted_date_time inserted_date_time,
+       d_mms_member_attribute.inserted_dim_date_key inserted_dim_date_key,
+       d_mms_member_attribute.inserted_dim_time_key inserted_dim_time_key,
+       d_mms_member_attribute.member_attribute_type_dim_description_key member_attribute_type_dim_description_key,
+       d_mms_member_attribute.member_id member_id,
+       d_mms_member_attribute.updated_date_time updated_date_time,
+       d_mms_member_attribute.updated_dim_date_key updated_dim_date_key,
+       d_mms_member_attribute.updated_dim_time_key updated_dim_time_key,
+       d_mms_member_attribute.val_member_attribute_type_id val_member_attribute_type_id
+  from dbo.d_mms_member_attribute;

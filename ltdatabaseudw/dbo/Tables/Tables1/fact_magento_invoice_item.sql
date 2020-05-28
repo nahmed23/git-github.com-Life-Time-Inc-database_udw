@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[fact_magento_invoice_item] (
+    [fact_magento_invoice_item_id]               BIGINT          IDENTITY (1, 1) NOT NULL,
+    [allocated_month_starting_dim_date_key]      VARCHAR (8)     NULL,
+    [allocated_recalculate_through_datetime]     DATETIME        NULL,
+    [allocated_recalculate_through_dim_date_key] VARCHAR (8)     NULL,
+    [currency_code]                              VARCHAR (3)     NULL,
+    [fact_magento_invoice_item_key]              VARCHAR (32)    NULL,
+    [fact_magento_invoice_key]                   VARCHAR (32)    NULL,
+    [fact_magento_order_item_key]                VARCHAR (32)    NULL,
+    [fact_magento_order_key]                     VARCHAR (32)    NULL,
+    [fact_magento_payment_key]                   VARCHAR (32)    NULL,
+    [invoice_amount]                             DECIMAL (12, 2) NULL,
+    [invoice_datetime]                           DATETIME        NULL,
+    [invoice_dim_date_key]                       VARCHAR (8)     NULL,
+    [invoice_item_id]                            INT             NULL,
+    [item_amount]                                DECIMAL (12, 2) NULL,
+    [item_cost]                                  DECIMAL (12, 2) NULL,
+    [item_discount_amount]                       DECIMAL (12, 2) NULL,
+    [item_price]                                 DECIMAL (12, 2) NULL,
+    [item_quantity]                              INT             NULL,
+    [item_tax_amount]                            DECIMAL (12, 2) NULL,
+    [shipping_amount]                            DECIMAL (12, 2) NULL,
+    [shipping_tax_amount]                        DECIMAL (12, 2) NULL,
+    [dv_load_date_time]                          DATETIME        NULL,
+    [dv_load_end_date_time]                      DATETIME        NULL,
+    [dv_batch_id]                                BIGINT          NOT NULL,
+    [dv_inserted_date_time]                      DATETIME        NOT NULL,
+    [dv_insert_user]                             VARCHAR (50)    NOT NULL,
+    [dv_updated_date_time]                       DATETIME        NULL,
+    [dv_update_user]                             VARCHAR (50)    NULL
+)
+WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = HASH([fact_magento_invoice_item_key]));
+

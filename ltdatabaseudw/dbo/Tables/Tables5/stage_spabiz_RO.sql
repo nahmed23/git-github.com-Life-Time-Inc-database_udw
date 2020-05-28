@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dbo].[stage_spabiz_RO] (
+    [stage_spabiz_RO_id] BIGINT          NOT NULL,
+    [ID]                 DECIMAL (26, 6) NULL,
+    [COUNTERID]          DECIMAL (26, 6) NULL,
+    [STOREID]            DECIMAL (26, 6) NULL,
+    [EDITTIME]           DATETIME        NULL,
+    [TYPE]               DECIMAL (26, 6) NULL,
+    [NUM]                VARCHAR (150)   NULL,
+    [VENDORID]           DECIMAL (26, 6) NULL,
+    [Date]               DATETIME        NULL,
+    [STAFFID]            DECIMAL (26, 6) NULL,
+    [CHECKSTAFFID]       DECIMAL (26, 6) NULL,
+    [STOCKSTAFFID]       DECIMAL (26, 6) NULL,
+    [PACKNUM]            VARCHAR (150)   NULL,
+    [STATUS]             DECIMAL (26, 6) NULL,
+    [PAYMENT]            VARCHAR (150)   NULL,
+    [DISCOUNT]           DECIMAL (26, 6) NULL,
+    [TAX]                DECIMAL (26, 6) NULL,
+    [TOTAL]              DECIMAL (26, 6) NULL,
+    [POID]               DECIMAL (26, 6) NULL,
+    [PONUM]              VARCHAR (150)   NULL,
+    [SUBTOTAL]           DECIMAL (26, 6) NULL,
+    [FREIGHT]            DECIMAL (26, 6) NULL,
+    [RETAILTOTAL]        DECIMAL (26, 6) NULL,
+    [TAXTYPE]            DECIMAL (26, 6) NULL,
+    [STORE_NUMBER]       DECIMAL (26, 6) NULL,
+    [INVDATE]            DATETIME        NULL,
+    [INVNUMBER]          VARCHAR (150)   NULL,
+    [dv_batch_id]        BIGINT          NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = ROUND_ROBIN);
+

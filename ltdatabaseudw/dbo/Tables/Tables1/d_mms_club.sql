@@ -1,0 +1,55 @@
+﻿CREATE TABLE [dbo].[d_mms_club] (
+    [d_mms_club_id]                                BIGINT        IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                                      CHAR (32)     NOT NULL,
+    [dim_club_key]                                 CHAR (32)     NULL,
+    [club_id]                                      INT           NULL,
+    [allow_junior_check_in_flag]                   CHAR (1)      NULL,
+    [assess_junior_member_dues_flag]               CHAR (1)      NULL,
+    [check_in_group_dim_description_key]           VARCHAR (532) NULL,
+    [check_in_group_level]                         INT           NULL,
+    [child_center_weekly_limit]                    INT           NULL,
+    [club_close_dim_date_key]                      INT           NULL,
+    [club_code]                                    VARCHAR (18)  NULL,
+    [club_name]                                    VARCHAR (50)  NULL,
+    [club_open_dim_date_key]                       INT           NULL,
+    [club_status]                                  VARCHAR (25)  NULL,
+    [club_type]                                    VARCHAR (21)  NULL,
+    [currency_code_dim_description_key]            VARCHAR (532) NULL,
+    [domain_name_prefix]                           VARCHAR (10)  NULL,
+    [dst_offset]                                   INT           NULL,
+    [formal_club_name]                             VARCHAR (50)  NULL,
+    [gl_club_id]                                   INT           NULL,
+    [info_genesis_store_id]                        INT           NULL,
+    [marketing_club_level]                         VARCHAR (50)  NULL,
+    [marketing_map_region]                         VARCHAR (50)  NULL,
+    [max_junior_age]                               INT           NULL,
+    [member_activities_region_dim_description_key] VARCHAR (532) NULL,
+    [pt_rcl_area_dim_description_key]              VARCHAR (532) NULL,
+    [region_dim_description_key]                   VARCHAR (532) NULL,
+    [sales_area_dim_description_key]               VARCHAR (532) NULL,
+    [sell_junior_member_dues_flag]                 CHAR (1)      NULL,
+    [shortcurts_site_id]                           INT           NULL,
+    [st_offset]                                    INT           NULL,
+    [val_member_activity_region_id]                INT           NULL,
+    [val_pt_rcl_area_id]                           INT           NULL,
+    [val_region_id]                                INT           NULL,
+    [val_sales_area_id]                            INT           NULL,
+    [val_time_zone_id]                             INT           NULL,
+    [workday_region]                               VARCHAR (4)   NULL,
+    [p_mms_club_id]                                BIGINT        NOT NULL,
+    [deleted_flag]                                 INT           NULL,
+    [dv_load_date_time]                            DATETIME      NULL,
+    [dv_load_end_date_time]                        DATETIME      NULL,
+    [dv_batch_id]                                  BIGINT        NOT NULL,
+    [dv_inserted_date_time]                        DATETIME      NOT NULL,
+    [dv_insert_user]                               VARCHAR (50)  NOT NULL,
+    [dv_updated_date_time]                         DATETIME      NULL,
+    [dv_update_user]                               VARCHAR (50)  NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([bk_hash]));
+
+
+GO
+CREATE NONCLUSTERED INDEX [ix_dv_batch_id]
+    ON [dbo].[d_mms_club]([dv_batch_id] ASC);
+

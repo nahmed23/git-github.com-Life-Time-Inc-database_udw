@@ -1,0 +1,2 @@
+﻿CREATE USER [SEC-DB-UDW-Analysts-Elevated] FOR EXTERNAL PROVIDER;
+

@@ -1,0 +1,6 @@
+﻿CREATE VIEW [marketing].[v_wrk_pega_child_center_usage_activity_area]
+AS select wrk_pega_child_center_usage_activity_area.activity_area_dim_description_key activity_area_dim_description_key,
+       wrk_pega_child_center_usage_activity_area.description description,
+       wrk_pega_child_center_usage_activity_area.fact_mms_child_center_usage_key fact_mms_child_center_usage_key,
+       wrk_pega_child_center_usage_activity_area.val_activity_area_id val_activity_area_id
+  from dbo.wrk_pega_child_center_usage_activity_area;

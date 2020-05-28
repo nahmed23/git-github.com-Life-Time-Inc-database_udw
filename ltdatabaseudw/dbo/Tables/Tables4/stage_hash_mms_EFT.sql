@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[stage_hash_mms_EFT] (
+    [stage_hash_mms_EFT_id]     BIGINT          IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                   CHAR (32)       NOT NULL,
+    [EFTID]                     INT             NULL,
+    [MembershipID]              INT             NULL,
+    [ValEFTStatusID]            TINYINT         NULL,
+    [EFTReturnCodeID]           INT             NULL,
+    [AccountNumber]             VARCHAR (50)    NULL,
+    [AccountOwner]              VARCHAR (50)    NULL,
+    [RoutingNumber]             VARCHAR (9)     NULL,
+    [ExpirationDate]            DATETIME        NULL,
+    [EFTDate]                   DATETIME        NULL,
+    [PaymentID]                 INT             NULL,
+    [ReturnCode]                VARCHAR (10)    NULL,
+    [ValEFTTypeID]              TINYINT         NULL,
+    [EFTAmount]                 DECIMAL (26, 6) NULL,
+    [ValPaymentTypeID]          TINYINT         NULL,
+    [MemberID]                  INT             NULL,
+    [Job_Task_ID]               INT             NULL,
+    [MaskedAccountNumber]       VARCHAR (50)    NULL,
+    [MaskedAccountNumber64]     VARCHAR (17)    NULL,
+    [InsertedDateTime]          DATETIME        NULL,
+    [UpdatedDateTime]           DATETIME        NULL,
+    [DuesAmountUsedForProducts] DECIMAL (26, 6) NULL,
+    [EFTAmountProducts]         DECIMAL (26, 6) NULL,
+    [OrderNumber]               VARCHAR (15)    NULL,
+    [Token]                     VARCHAR (30)    NULL,
+    [ValEFTAccountTypeID]       TINYINT         NULL,
+    [dv_load_date_time]         DATETIME        NOT NULL,
+    [dv_batch_id]               BIGINT          NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([bk_hash]));
+

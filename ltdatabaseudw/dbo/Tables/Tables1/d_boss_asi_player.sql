@@ -1,0 +1,56 @@
+﻿CREATE TABLE [dbo].[d_boss_asi_player] (
+    [d_boss_asi_player_id]           BIGINT          IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                        CHAR (32)       NOT NULL,
+    [asi_player_id]                  INT             NULL,
+    [asi_player_status]              CHAR (1)        NULL,
+    [balance_due_amount]             DECIMAL (26, 6) NULL,
+    [can_charge_flag]                CHAR (1)        NULL,
+    [cancel_dim_date_key]            CHAR (8)        NULL,
+    [check_in_dim_date_key]          CHAR (8)        NULL,
+    [check_in_dim_time_key]          CHAR (8)        NULL,
+    [checked_in_flag]                CHAR (1)        NULL,
+    [contact_id]                     INT             NULL,
+    [created_dim_date_key]           CHAR (8)        NULL,
+    [created_dim_time_key]           CHAR (8)        NULL,
+    [date_of_birth_dim_date_key]     CHAR (8)        NULL,
+    [dim_boss_reservation_key]       CHAR (32)       NULL,
+    [dim_mms_member_key]             CHAR (32)       NULL,
+    [dv_deleted_flag]                INT             NULL,
+    [email_address]                  NCHAR (50)      NULL,
+    [fact_mms_sales_transaction_key] CHAR (32)       NULL,
+    [house_account]                  CHAR (10)       NULL,
+    [last_paid_date_time]            DATETIME        NULL,
+    [member_code]                    CHAR (10)       NULL,
+    [member_flag]                    CHAR (1)        NULL,
+    [member_type]                    CHAR (1)        NULL,
+    [membership_type_id]             INT             NULL,
+    [mms_swipe_flag]                 CHAR (25)       NULL,
+    [notes]                          VARCHAR (240)   NULL,
+    [origin]                         CHAR (1)        NULL,
+    [paid]                           CHAR (1)        NULL,
+    [phone_number]                   CHAR (10)       NULL,
+    [price]                          DECIMAL (26, 6) NULL,
+    [recurrence_id]                  INT             NULL,
+    [rostered_by]                    INT             NULL,
+    [sequence]                       INT             NULL,
+    [start_dim_date_key]             CHAR (8)        NULL,
+    [tax_amount]                     DECIMAL (26, 6) NULL,
+    [trans]                          INT             NULL,
+    [used_dim_date_key]              CHAR (8)        NULL,
+    [p_boss_asi_player_id]           BIGINT          NOT NULL,
+    [deleted_flag]                   INT             NULL,
+    [dv_load_date_time]              DATETIME        NULL,
+    [dv_load_end_date_time]          DATETIME        NULL,
+    [dv_batch_id]                    BIGINT          NOT NULL,
+    [dv_inserted_date_time]          DATETIME        NOT NULL,
+    [dv_insert_user]                 VARCHAR (50)    NOT NULL,
+    [dv_updated_date_time]           DATETIME        NULL,
+    [dv_update_user]                 VARCHAR (50)    NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([bk_hash]));
+
+
+GO
+CREATE NONCLUSTERED INDEX [ix_dv_batch_id]
+    ON [dbo].[d_boss_asi_player]([dv_batch_id] ASC);
+

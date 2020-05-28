@@ -1,0 +1,17 @@
+﻿CREATE VIEW [marketing].[v_fact_spabiz_ticket_payment] AS select d_spabiz_ticket_pay.fact_spabiz_ticket_payment_key fact_spabiz_ticket_payment_key,
+       d_spabiz_ticket_pay.ticket_pay_id ticket_pay_id,
+       d_spabiz_ticket_pay.store_number store_number,
+       d_spabiz_ticket_pay.created_date_time created_date_time,
+       d_spabiz_ticket_pay.dim_spabiz_customer_key dim_spabiz_customer_key,
+       d_spabiz_ticket_pay.dim_spabiz_payment_type_key dim_spabiz_payment_type_key,
+       d_spabiz_ticket_pay.dim_spabiz_shift_key dim_spabiz_shift_key,
+       d_spabiz_ticket_pay.dim_spabiz_store_key dim_spabiz_store_key,
+       d_spabiz_ticket_pay.edit_date_time edit_date_time,
+       d_spabiz_ticket_pay.fact_spabiz_ticket_key fact_spabiz_ticket_key,
+       d_spabiz_ticket_pay.hash_for_reference_record_for_payment_type hash_for_reference_record_for_payment_type,
+       d_spabiz_ticket_pay.payment_amount payment_amount,
+       d_spabiz_ticket_pay.payment_checked_during_close payment_checked_during_close,
+       d_spabiz_ticket_pay.payment_number payment_number,
+       d_spabiz_ticket_pay.payment_status_dim_description_key payment_status_dim_description_key,
+       d_spabiz_ticket_pay.payment_status_id payment_status_id
+  from dbo.d_spabiz_ticket_pay;

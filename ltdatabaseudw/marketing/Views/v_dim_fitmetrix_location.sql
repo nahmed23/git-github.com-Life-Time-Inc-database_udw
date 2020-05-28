@@ -1,0 +1,15 @@
+﻿CREATE VIEW [marketing].[v_dim_fitmetrix_location] AS select d_fitmetrix_api_facility_locations.dim_fitmetrix_location_key dim_fitmetrix_location_key,
+       d_fitmetrix_api_facility_locations.facility_location_id facility_location_id,
+       d_fitmetrix_api_facility_locations.address_city address_city,
+       d_fitmetrix_api_facility_locations.address_country_abbreviation address_country_abbreviation,
+       d_fitmetrix_api_facility_locations.address_line_1 address_line_1,
+       d_fitmetrix_api_facility_locations.address_line_2 address_line_2,
+       d_fitmetrix_api_facility_locations.address_postal_code address_postal_code,
+       d_fitmetrix_api_facility_locations.address_state_or_province_abbreviation address_state_or_province_abbreviation,
+       d_fitmetrix_api_facility_locations.dim_club_key dim_club_key,
+       d_fitmetrix_api_facility_locations.email_from_name email_from_name,
+       d_fitmetrix_api_facility_locations.latitude latitude,
+       d_fitmetrix_api_facility_locations.location_name location_name,
+       d_fitmetrix_api_facility_locations.longitude longitude,
+       d_fitmetrix_api_facility_locations.phone phone
+  from dbo.d_fitmetrix_api_facility_locations;

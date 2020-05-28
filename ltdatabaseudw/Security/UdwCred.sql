@@ -1,0 +1,3 @@
+﻿CREATE DATABASE SCOPED CREDENTIAL [UdwCred]
+    WITH IDENTITY = N'udwblobuser';
+

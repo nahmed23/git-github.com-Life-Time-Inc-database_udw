@@ -1,0 +1,31 @@
+﻿CREATE TABLE [dbo].[fact_cafe_tips_summary] (
+    [fact_cafe_tips_summary_id]                   BIGINT          IDENTITY (1, 1) NOT NULL,
+    [charged_gratuity_amount]                     DECIMAL (18, 4) NULL,
+    [charged_tip_amount]                          DECIMAL (18, 4) NULL,
+    [dim_cafe_profit_center_key]                  CHAR (32)       NULL,
+    [dim_club_key]                                CHAR (32)       NULL,
+    [dim_merchant_number_key]                     CHAR (32)       NULL,
+    [event_dim_id]                                INT             NULL,
+    [fact_cafe_tips_summary_key]                  CHAR (32)       NULL,
+    [meal_period_dim_id]                          INT             NULL,
+    [original_currency_code]                      CHAR (3)        NULL,
+    [posted_business_period_dim_id]               INT             NULL,
+    [posted_business_period_end_dim_date_key]     CHAR (32)       NULL,
+    [posted_business_period_start_dim_date_key]   CHAR (32)       NULL,
+    [profit_center_dim_id]                        INT             NULL,
+    [server_employee_dim_id]                      INT             NULL,
+    [tendered_business_period_dim_id]             INT             NULL,
+    [tendered_business_period_end_dim_date_key]   CHAR (32)       NULL,
+    [tendered_business_period_start_dim_date_key] CHAR (32)       NULL,
+    [usd_dim_plan_exchange_rate_key]              CHAR (32)       NULL,
+    [usd_monthly_average_dim_exchange_rate_key]   CHAR (32)       NULL,
+    [dv_load_date_time]                           DATETIME        NULL,
+    [dv_load_end_date_time]                       DATETIME        NULL,
+    [dv_batch_id]                                 BIGINT          NOT NULL,
+    [dv_inserted_date_time]                       DATETIME        NOT NULL,
+    [dv_insert_user]                              VARCHAR (50)    NOT NULL,
+    [dv_updated_date_time]                        DATETIME        NULL,
+    [dv_update_user]                              VARCHAR (50)    NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([fact_cafe_tips_summary_key]));
+

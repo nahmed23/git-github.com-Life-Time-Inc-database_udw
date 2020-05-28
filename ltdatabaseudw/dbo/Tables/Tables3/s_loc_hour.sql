@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[s_loc_hour] (
+    [s_loc_hour_id]          BIGINT        IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                CHAR (32)     NOT NULL,
+    [hour_id]                BIGINT        NULL,
+    [day_of_week]            CHAR (3)      NULL,
+    [start_time]             TIME (7)      NULL,
+    [end_time]               TIME (7)      NULL,
+    [hour_24]                BIT           NULL,
+    [sunrise]                BIT           NULL,
+    [sunset]                 BIT           NULL,
+    [closed]                 BIT           NULL,
+    [by_appointment_only]    BIT           NULL,
+    [created_date_time]      DATETIME      NULL,
+    [created_by]             VARCHAR (100) NULL,
+    [deleted_date_time]      DATETIME      NULL,
+    [deleted_by]             VARCHAR (100) NULL,
+    [last_updated_date_time] DATETIME      NULL,
+    [last_updated_by]        VARCHAR (100) NULL,
+    [dv_load_date_time]      DATETIME      NOT NULL,
+    [dv_r_load_source_id]    BIGINT        NOT NULL,
+    [dv_inserted_date_time]  DATETIME      NOT NULL,
+    [dv_insert_user]         VARCHAR (50)  NOT NULL,
+    [dv_updated_date_time]   DATETIME      NULL,
+    [dv_update_user]         VARCHAR (50)  NULL,
+    [dv_hash]                CHAR (32)     NOT NULL,
+    [dv_deleted]             BIT           DEFAULT ((0)) NOT NULL,
+    [dv_batch_id]            BIGINT        NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([bk_hash]));
+

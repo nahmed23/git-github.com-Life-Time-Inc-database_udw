@@ -1,0 +1,22 @@
+﻿CREATE VIEW [marketing].[v_dim_lifetime_measure]
+AS select dim_trainerize_measure.created_by_dim_employee_key created_by_dim_employee_key,
+       dim_trainerize_measure.created_dim_date_key created_dim_date_key,
+       dim_trainerize_measure.description description,
+       dim_trainerize_measure.diagonostic_range_female diagonostic_range_female,
+       dim_trainerize_measure.diagonostic_range_male diagonostic_range_male,
+       dim_trainerize_measure.dim_trainerize_measure_key dim_trainerize_measure_key,
+       dim_trainerize_measure.extended_metadata extended_metadata,
+       dim_trainerize_measure.gender gender,
+       dim_trainerize_measure.measure_value_type measure_value_type,
+       dim_trainerize_measure.measurement_instructions_location measurement_instructions_location,
+       dim_trainerize_measure.measurement_type measurement_type,
+       dim_trainerize_measure.measures_id measures_id,
+       dim_trainerize_measure.modified_by_dim_employee_key modified_by_dim_employee_key,
+       dim_trainerize_measure.modified_dim_date_key modified_dim_date_key,
+       dim_trainerize_measure.optimum_range_female optimum_range_female,
+       dim_trainerize_measure.optimum_range_male optimum_range_male,
+       dim_trainerize_measure.slug slug,
+       dim_trainerize_measure.tags tags,
+       dim_trainerize_measure.title title,
+       dim_trainerize_measure.unit unit
+  from dbo.dim_trainerize_measure;

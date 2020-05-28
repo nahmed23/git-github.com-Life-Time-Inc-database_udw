@@ -1,0 +1,22 @@
+﻿CREATE VIEW [marketing].[v_dim_fitmetrix_appointment]
+AS select dim_fitmetrix_appointment.appointment_id appointment_id,
+       dim_fitmetrix_appointment.cancelled_flag cancelled_flag,
+       dim_fitmetrix_appointment.dim_boss_reservation_key dim_boss_reservation_key,
+       dim_fitmetrix_appointment.dim_club_key dim_club_key,
+       dim_fitmetrix_appointment.dim_employee_key dim_employee_key,
+       dim_fitmetrix_appointment.dim_exerp_booking_key dim_exerp_booking_key,
+       dim_fitmetrix_appointment.dim_fitmetrix_activity_key dim_fitmetrix_activity_key,
+       dim_fitmetrix_appointment.dim_fitmetrix_appointment_key dim_fitmetrix_appointment_key,
+       dim_fitmetrix_appointment.dim_fitmetrix_instructor_key dim_fitmetrix_instructor_key,
+       dim_fitmetrix_appointment.dim_fitmetrix_location_key dim_fitmetrix_location_key,
+       dim_fitmetrix_appointment.dim_fitmetrix_location_resource_key dim_fitmetrix_location_resource_key,
+       dim_fitmetrix_appointment.end_dim_date_key end_dim_date_key,
+       dim_fitmetrix_appointment.end_dim_time_key end_dim_time_key,
+       dim_fitmetrix_appointment.instructor_name instructor_name,
+       dim_fitmetrix_appointment.max_capacity max_capacity,
+       dim_fitmetrix_appointment.name name,
+       dim_fitmetrix_appointment.start_dim_date_key start_dim_date_key,
+       dim_fitmetrix_appointment.start_dim_time_key start_dim_time_key,
+       dim_fitmetrix_appointment.total_booked total_booked,
+       dim_fitmetrix_appointment.wait_list_available_flag wait_list_available_flag
+  from dbo.dim_fitmetrix_appointment;

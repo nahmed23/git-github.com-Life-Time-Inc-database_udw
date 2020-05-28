@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[stage_spabiz_GIFTCERTIFICATE] (
+    [stage_spabiz_GIFTCERTIFICATE_id] BIGINT          NOT NULL,
+    [ID]                              DECIMAL (26, 6) NULL,
+    [COUNTERID]                       DECIMAL (26, 6) NULL,
+    [STOREID]                         DECIMAL (26, 6) NULL,
+    [EDITTIME]                        DATETIME        NULL,
+    [TICKETID]                        DECIMAL (26, 6) NULL,
+    [SERIALNUM]                       VARCHAR (150)   NULL,
+    [Date]                            DATETIME        NULL,
+    [GIFTID]                          DECIMAL (26, 6) NULL,
+    [STAFFIDCREATE]                   DECIMAL (26, 6) NULL,
+    [STAFFID1]                        DECIMAL (26, 6) NULL,
+    [STAFFID2]                        DECIMAL (26, 6) NULL,
+    [DAYSGOOD]                        DECIMAL (26, 6) NULL,
+    [EXPDATE]                         DATETIME        NULL,
+    [BUY_CUSTID]                      DECIMAL (26, 6) NULL,
+    [CUSTID]                          DECIMAL (26, 6) NULL,
+    [STATUS]                          DECIMAL (26, 6) NULL,
+    [MESSAGE]                         VARCHAR (765)   NULL,
+    [LASTUSED]                        DATETIME        NULL,
+    [NOTE]                            VARCHAR (765)   NULL,
+    [AMOUNT]                          DECIMAL (26, 6) NULL,
+    [BALANCE]                         DECIMAL (26, 6) NULL,
+    [SELLAMOUNT]                      DECIMAL (26, 6) NULL,
+    [STORE_NUMBER]                    DECIMAL (26, 6) NULL,
+    [WEBMETADATA]                     VARCHAR (3000)  NULL,
+    [dv_batch_id]                     BIGINT          NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = ROUND_ROBIN);
+

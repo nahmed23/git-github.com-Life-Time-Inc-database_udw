@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[s_mms_eft] (
+    [s_mms_eft_id]                  BIGINT          IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                       CHAR (32)       NOT NULL,
+    [eft_id]                        INT             NULL,
+    [account_number]                VARCHAR (50)    NULL,
+    [account_owner]                 VARCHAR (50)    NULL,
+    [routing_number]                VARCHAR (9)     NULL,
+    [expiration_date]               DATETIME        NULL,
+    [eft_date]                      DATETIME        NULL,
+    [return_code]                   VARCHAR (10)    NULL,
+    [eft_amount]                    DECIMAL (26, 6) NULL,
+    [masked_account_number]         VARCHAR (50)    NULL,
+    [masked_account_number64]       VARCHAR (17)    NULL,
+    [inserted_date_time]            DATETIME        NULL,
+    [updated_date_time]             DATETIME        NULL,
+    [dues_amount_used_for_products] DECIMAL (26, 6) NULL,
+    [eft_amount_products]           DECIMAL (26, 6) NULL,
+    [order_number]                  VARCHAR (15)    NULL,
+    [dv_load_date_time]             DATETIME        NOT NULL,
+    [dv_r_load_source_id]           BIGINT          NOT NULL,
+    [dv_inserted_date_time]         DATETIME        NOT NULL,
+    [dv_insert_user]                VARCHAR (50)    NOT NULL,
+    [dv_updated_date_time]          DATETIME        NULL,
+    [dv_update_user]                VARCHAR (50)    NULL,
+    [dv_hash]                       CHAR (32)       NOT NULL,
+    [dv_deleted]                    BIT             DEFAULT ((0)) NOT NULL,
+    [dv_batch_id]                   BIGINT          NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([bk_hash]));
+

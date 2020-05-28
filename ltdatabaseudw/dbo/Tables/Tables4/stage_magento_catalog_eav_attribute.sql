@@ -1,0 +1,31 @@
+﻿CREATE TABLE [dbo].[stage_magento_catalog_eav_attribute] (
+    [stage_magento_catalog_eav_attribute_id] BIGINT          NOT NULL,
+    [attribute_id]                           INT             NULL,
+    [frontend_input_renderer]                NVARCHAR (255)  NULL,
+    [is_global]                              INT             NULL,
+    [is_visible]                             INT             NULL,
+    [is_searchable]                          INT             NULL,
+    [is_filterable]                          INT             NULL,
+    [is_comparable]                          INT             NULL,
+    [is_visible_on_front]                    INT             NULL,
+    [is_html_allowed_on_front]               INT             NULL,
+    [is_used_for_price_rules]                INT             NULL,
+    [is_filterable_in_search]                INT             NULL,
+    [used_in_product_listing]                INT             NULL,
+    [used_for_sort_by]                       INT             NULL,
+    [apply_to]                               NVARCHAR (255)  NULL,
+    [is_visible_in_advanced_search]          INT             NULL,
+    [position]                               INT             NULL,
+    [is_wysiwyg_enabled]                     INT             NULL,
+    [is_used_for_promo_rules]                INT             NULL,
+    [is_required_in_admin_store]             INT             NULL,
+    [is_used_in_grid]                        INT             NULL,
+    [is_visible_in_grid]                     INT             NULL,
+    [is_filterable_in_grid]                  INT             NULL,
+    [search_weight]                          DECIMAL (26, 6) NULL,
+    [additional_data]                        NVARCHAR (255)  NULL,
+    [dummy_modified_date_time]               DATETIME        NULL,
+    [dv_batch_id]                            BIGINT          NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = ROUND_ROBIN);
+

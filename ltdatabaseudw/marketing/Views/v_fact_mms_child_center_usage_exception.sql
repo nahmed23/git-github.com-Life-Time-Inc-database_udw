@@ -1,0 +1,6 @@
+﻿CREATE VIEW [marketing].[v_fact_mms_child_center_usage_exception] AS select d_mms_child_center_usage_exception.fact_mms_child_center_usage_exception_key fact_mms_child_center_usage_exception_key,
+       d_mms_child_center_usage_exception.child_center_usage_exception_id child_center_usage_exception_id,
+       d_mms_child_center_usage_exception.dim_employee_key dim_employee_key,
+       d_mms_child_center_usage_exception.exception_dim_description_key exception_dim_description_key,
+       d_mms_child_center_usage_exception.fact_mms_child_center_usage_key fact_mms_child_center_usage_key
+  from dbo.d_mms_child_center_usage_exception;

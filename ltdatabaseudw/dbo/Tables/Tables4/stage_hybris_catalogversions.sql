@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[stage_hybris_catalogversions] (
+    [stage_hybris_catalogversions_id] BIGINT         NOT NULL,
+    [hjmpTS]                          BIGINT         NULL,
+    [createdTS]                       DATETIME       NULL,
+    [modifiedTS]                      DATETIME       NULL,
+    [TypePkString]                    BIGINT         NULL,
+    [OwnerPkString]                   BIGINT         NULL,
+    [PK]                              BIGINT         NULL,
+    [p_active]                        TINYINT        NULL,
+    [p_version]                       NVARCHAR (255) NULL,
+    [p_mimerootdirectory]             NVARCHAR (255) NULL,
+    [p_generationdate]                DATETIME       NULL,
+    [p_defaultcurrency]               BIGINT         NULL,
+    [p_inclfreight]                   TINYINT        NULL,
+    [p_inclpacking]                   TINYINT        NULL,
+    [p_inclassurance]                 TINYINT        NULL,
+    [p_inclduty]                      TINYINT        NULL,
+    [p_territories]                   VARCHAR (8000) NULL,
+    [p_languages]                     VARCHAR (8000) NULL,
+    [p_generatorinfo]                 NVARCHAR (255) NULL,
+    [p_categorysystemid]              NVARCHAR (255) NULL,
+    [p_previousupdateversion]         INT            NULL,
+    [p_catalog]                       BIGINT         NULL,
+    [p_mnemonic]                      NVARCHAR (255) NULL,
+    [aCLTS]                           BIGINT         NULL,
+    [propTS]                          BIGINT         NULL,
+    [dv_batch_id]                     BIGINT         NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = ROUND_ROBIN);
+

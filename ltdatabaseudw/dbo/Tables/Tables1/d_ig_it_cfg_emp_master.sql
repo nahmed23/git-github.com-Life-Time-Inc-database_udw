@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[d_ig_it_cfg_emp_master] (
+    [d_ig_it_cfg_emp_master_id]        BIGINT        IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                          CHAR (32)     NOT NULL,
+    [dim_cafe_employee_key]            VARCHAR (32)  NULL,
+    [emp_id]                           INT           NULL,
+    [emp_card_number]                  INT           NULL,
+    [emp_first_name]                   NVARCHAR (16) NULL,
+    [emp_hire_date]                    DATETIME      NULL,
+    [emp_hire_dim_date_key]            VARCHAR (8)   NULL,
+    [emp_hire_dim_time_key]            INT           NULL,
+    [emp_last_name]                    NVARCHAR (50) NULL,
+    [emp_pos_name]                     NVARCHAR (16) NULL,
+    [emp_terminate_date]               DATETIME      NULL,
+    [emp_terminate_dim_date_key]       VARCHAR (8)   NULL,
+    [emp_terminate_dim_time_key]       INT           NULL,
+    [store_id]                         INT           NULL,
+    [supervisor_dim_cafe_employee_key] VARCHAR (32)  NULL,
+    [supervisor_emp_id]                INT           NULL,
+    [p_ig_it_cfg_emp_master_id]        BIGINT        NOT NULL,
+    [deleted_flag]                     INT           NULL,
+    [dv_load_date_time]                DATETIME      NULL,
+    [dv_load_end_date_time]            DATETIME      NULL,
+    [dv_batch_id]                      BIGINT        NOT NULL,
+    [dv_inserted_date_time]            DATETIME      NOT NULL,
+    [dv_insert_user]                   VARCHAR (50)  NOT NULL,
+    [dv_updated_date_time]             DATETIME      NULL,
+    [dv_update_user]                   VARCHAR (50)  NULL
+)
+WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = HASH([bk_hash]));
+

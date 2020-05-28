@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ltdatabaseudw", "ltdatabaseudw\ltdatabaseudw.sqlproj", "{BAAA7FC6-EDAF-4CDE-97E9-292DE8BF97E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAAA7FC6-EDAF-4CDE-97E9-292DE8BF97E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAAA7FC6-EDAF-4CDE-97E9-292DE8BF97E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAAA7FC6-EDAF-4CDE-97E9-292DE8BF97E7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BAAA7FC6-EDAF-4CDE-97E9-292DE8BF97E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAAA7FC6-EDAF-4CDE-97E9-292DE8BF97E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAAA7FC6-EDAF-4CDE-97E9-292DE8BF97E7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0266F65-9B94-43A8-B801-170EB3058EC0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+﻿CREATE TABLE [sandbox].[mytesttable] (
+    [col1] INT NULL
+)
+WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
+

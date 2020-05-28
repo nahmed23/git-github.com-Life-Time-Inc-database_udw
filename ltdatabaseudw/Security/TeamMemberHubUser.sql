@@ -1,0 +1,2 @@
+﻿CREATE USER [TeamMemberHubUser] WITHOUT LOGIN;
+

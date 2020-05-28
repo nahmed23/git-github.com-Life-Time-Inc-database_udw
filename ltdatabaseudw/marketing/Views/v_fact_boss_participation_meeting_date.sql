@@ -1,0 +1,13 @@
+﻿CREATE VIEW [marketing].[v_fact_boss_participation_meeting_date] AS select 
+v_dim_boss_reservation_meeting_date.dim_boss_reservation_key ,
+v_dim_boss_reservation_meeting_date.meeting_dim_date_key, 
+v_fact_boss_participation.instructor_type, 
+ISNULL(v_fact_boss_participation.number_of_participants,0) number_of_participants, 
+ISNULL(v_fact_boss_participation.participation_dim_date_key,-998) participation_dim_date_key,
+coalesce(v_fact_boss_participation.primary_dim_employee_key,v_dim_boss_reservation_meeting_date.primary_dim_employee_key) primary_dim_employee_key, 
+coalesce(v_fact_boss_participation.secondary_dim_employee_key,v_dim_boss_reservation_meeting_date.secondary_dim_employee_key) secondary_dim_employee_key
+from 
+marketing.v_dim_boss_reservation_meeting_date 
+LEFT OUTER JOIN marketing.v_fact_boss_participation  
+on   v_fact_boss_participation.dim_boss_reservation_key = v_dim_boss_reservation_meeting_date.dim_boss_reservation_key
+ and v_fact_boss_participation.participation_dim_date_key = v_dim_boss_reservation_meeting_date.meeting_dim_date_key;

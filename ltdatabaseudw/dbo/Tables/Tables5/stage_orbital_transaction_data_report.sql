@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[stage_orbital_transaction_data_report] (
+    [stage_orbital_transaction_data_report_id] BIGINT          NOT NULL,
+    [RecordType]                               VARCHAR (2)     NULL,
+    [MerchantNumber]                           VARCHAR (20)    NULL,
+    [Filler]                                   VARCHAR (4)     NULL,
+    [BatchNumber]                              VARCHAR (15)    NULL,
+    [TransactionSequenceNumber]                INT             NULL,
+    [TranCode]                                 VARCHAR (2)     NULL,
+    [CardholderNumber]                         VARCHAR (20)    NULL,
+    [OriginalReferenceNumber]                  VARCHAR (15)    NULL,
+    [Amount]                                   DECIMAL (10, 2) NULL,
+    [AuthorizationCode]                        VARCHAR (10)    NULL,
+    [TransactionDate]                          VARCHAR (29)    NULL,
+    [MOPCode]                                  VARCHAR (2)     NULL,
+    [MnemonicCode]                             VARCHAR (4)     NULL,
+    [RejectReasonCode]                         VARCHAR (3)     NULL,
+    [TranType]                                 VARCHAR (2)     NULL,
+    [EntryMode]                                VARCHAR (2)     NULL,
+    [ServiceLevel]                             VARCHAR (1)     NULL,
+    [Filler1]                                  VARCHAR (1)     NULL,
+    [TransactionId]                            VARCHAR (15)    NULL,
+    [ValidationCode]                           VARCHAR (5)     NULL,
+    [DowngradeReason]                          VARCHAR (15)    NULL,
+    [ProcessDate]                              VARCHAR (29)    NULL,
+    [CustomerDefinedData]                      VARCHAR (30)    NULL,
+    [ChasePayIndicator]                        VARCHAR (1)     NULL,
+    [DigitalTokenMethod]                       VARCHAR (2)     NULL,
+    [PIDCode]                                  VARCHAR (10)    NULL,
+    [dummy_modified_date_time]                 DATETIME        NULL,
+    [dv_batch_id]                              BIGINT          NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = ROUND_ROBIN);
+

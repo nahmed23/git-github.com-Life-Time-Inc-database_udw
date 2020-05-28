@@ -1,0 +1,67 @@
+﻿CREATE VIEW [sandbox].[v_mart_mms_membership_recurrent_product]
+AS SELECT PIT.[membership_recurrent_product_id]
+     , LNK.[membership_id]
+     , LNK.[member_id]
+     , LNK.[club_id]
+     , LNK.[commission_employee_id]
+     , LNK.[last_updated_employee_id]
+     , LNK.[pricing_discount_id]
+     , LNK.[product_id]
+     , LNK.[val_assessment_day_id]
+     , LNK.[val_discount_reason_id]
+     , LNK.[val_recurrent_product_source_id]
+     , LNK.[val_recurrent_product_termination_reason_id]
+     , SAT.[activation_date]
+     , SAT.[cancellation_request_date]
+     , SAT.[termination_date]
+     , SAT.[inserted_date_time]
+     , SAT.[updated_date_time]
+     , SAT.[price]
+     , SAT.[created_date_time]
+     , SAT.[utc_created_date_time]
+     , SAT.[created_date_time_zone]
+     , SAT.[last_updated_date_time]
+     , SAT.[utc_last_updated_date_time]
+     , SAT.[last_updated_date_time_zone]
+     , SAT.[product_assessed_date_time]
+     , SAT.[comments]
+     , SAT.[number_of_sessions]
+     , SAT.[price_per_session]
+     , SAT.[product_hold_begin_date]
+     , SAT.[product_hold_end_date]
+     , SAT.[sold_not_serviced_flag]
+     , SAT.[retail_price]
+     , SAT.[retail_price_per_session]
+     , SAT.[promotion_code]
+     , SAT.[display_only_flag]
+     , [dim_mms_membership_key] = CASE WHEN NOT LNK.[membership_id] Is Null THEN CONVERT(char(32), HASHBYTES('MD5', ('P%#&z$@k' + CONVERT(varchar, LNK.[membership_id]))),2) ELSE CONVERT(char(32),'-998',2) END
+     , DIM.[dim_mms_member_key]
+     , DIM.[dim_club_key]
+     , DIM.[dim_mms_product_key]
+     , PIT.[bk_hash]
+     , PIT.[p_mms_membership_recurrent_product_id]
+     , PIT.[dv_load_date_time]
+     , PIT.[dv_batch_id]
+     , [dv_hash] = CONVERT(varchar(32), HASHBYTES('MD5', (LNK.[dv_hash] + SAT.[dv_hash])),2)
+     --, [l_hash] = LNK.[dv_hash]
+     --, [s_hash] = SAT.[dv_hash]
+  FROM [dbo].[p_mms_membership_recurrent_product] PIT
+       INNER JOIN [dbo].[d_mms_membership_recurrent_product] DIM
+         ON DIM.[bk_hash] = PIT.[bk_hash]
+            AND DIM.[p_mms_membership_recurrent_product_id] = PIT.[p_mms_membership_recurrent_product_id]
+       INNER JOIN [dbo].[l_mms_membership_recurrent_product] LNK
+         ON LNK.[bk_hash] = PIT.[bk_hash]
+            AND LNK.[l_mms_membership_recurrent_product_id] = PIT.[l_mms_membership_recurrent_product_id]
+       INNER JOIN[dbo].[s_mms_membership_recurrent_product] SAT
+         ON SAT.[bk_hash] = PIT.[bk_hash]
+            AND SAT.[s_mms_membership_recurrent_product_id] = PIT.[s_mms_membership_recurrent_product_id]
+       INNER JOIN
+         ( SELECT PIT.[bk_hash]
+                , PIT.[p_mms_membership_recurrent_product_id]
+                , RowRank = RANK() OVER (PARTITION BY PIT.[bk_hash] ORDER BY PIT.[dv_load_end_date_time] DESC)
+                , RowNumber = ROW_NUMBER() OVER (PARTITION BY PIT.[bk_hash] ORDER BY PIT.[dv_load_end_date_time] DESC)
+             FROM [dbo].[d_mms_membership_recurrent_product] PIT
+         ) PITU
+         ON PITU.[bk_hash] = PIT.[bk_hash]
+            AND PITU.[p_mms_membership_recurrent_product_id] = PIT.[p_mms_membership_recurrent_product_id]
+            AND PITU.RowRank = 1 AND PITU.RowNumber = 1;

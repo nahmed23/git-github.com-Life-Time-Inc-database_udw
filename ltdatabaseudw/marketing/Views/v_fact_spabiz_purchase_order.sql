@@ -1,0 +1,17 @@
+﻿CREATE VIEW [marketing].[v_fact_spabiz_purchase_order] AS select d_spabiz_po.fact_spabiz_purchase_order_key fact_spabiz_purchase_order_key,
+       d_spabiz_po.po_id po_id,
+       d_spabiz_po.store_number store_number,
+       d_spabiz_po.created_date_time created_date_time,
+       d_spabiz_po.dim_spabiz_staff_key dim_spabiz_staff_key,
+       d_spabiz_po.dim_spabiz_store_key dim_spabiz_store_key,
+       d_spabiz_po.dim_spabiz_vendor_key dim_spabiz_vendor_key,
+       d_spabiz_po.discount discount,
+       d_spabiz_po.edit_date_time edit_date_time,
+       d_spabiz_po.payment payment,
+       d_spabiz_po.retail_total retail_total,
+       d_spabiz_po.status_dim_description_key status_dim_description_key,
+       d_spabiz_po.status_id status_id,
+       d_spabiz_po.sub_total sub_total,
+       d_spabiz_po.tax tax,
+       d_spabiz_po.total total
+  from dbo.d_spabiz_po;

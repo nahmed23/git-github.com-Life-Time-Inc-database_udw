@@ -1,0 +1,31 @@
+﻿CREATE TABLE [dbo].[stage_hash_hybris_returnrequest] (
+    [stage_hash_hybris_returnrequest_id] BIGINT         IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                            CHAR (32)      NOT NULL,
+    [hjmpTS]                             BIGINT         NULL,
+    [createdTS]                          DATETIME       NULL,
+    [modifiedTS]                         DATETIME       NULL,
+    [TypePkString]                       BIGINT         NULL,
+    [OwnerPkString]                      BIGINT         NULL,
+    [PK]                                 BIGINT         NULL,
+    [p_code]                             NVARCHAR (255) NULL,
+    [p_rma]                              NVARCHAR (255) NULL,
+    [p_replacementorder]                 BIGINT         NULL,
+    [p_currency]                         BIGINT         NULL,
+    [p_status]                           BIGINT         NULL,
+    [p_returnlabel]                      BIGINT         NULL,
+    [p_trackingid]                       NVARCHAR (255) NULL,
+    [p_returnwarehouse]                  BIGINT         NULL,
+    [p_orderpos]                         INT            NULL,
+    [p_order]                            BIGINT         NULL,
+    [p_refunddeliverycost]               TINYINT        NULL,
+    [aCLTS]                              BIGINT         NULL,
+    [propTS]                             BIGINT         NULL,
+    [dv_load_date_time]                  DATETIME       NOT NULL,
+    [dv_inserted_date_time]              DATETIME       NOT NULL,
+    [dv_insert_user]                     VARCHAR (50)   NOT NULL,
+    [dv_updated_date_time]               DATETIME       NULL,
+    [dv_update_user]                     VARCHAR (50)   NULL,
+    [dv_batch_id]                        BIGINT         NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([bk_hash]));
+

@@ -1,0 +1,2 @@
+﻿CREATE USER [SelfServiceBI_POC] WITHOUT LOGIN;
+

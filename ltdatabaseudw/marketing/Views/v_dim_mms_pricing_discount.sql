@@ -1,0 +1,17 @@
+﻿CREATE VIEW [marketing].[v_dim_mms_pricing_discount] AS select dim_mms_pricing_discount.dim_mms_pricing_discount_key dim_mms_pricing_discount_key,
+       dim_mms_pricing_discount.pricing_discount_id pricing_discount_id,
+       dim_mms_pricing_discount.all_products_discount_use_limit all_products_discount_use_limit,
+       dim_mms_pricing_discount.available_for_all_products_flag available_for_all_products_flag,
+       dim_mms_pricing_discount.discount_application_type discount_application_type,
+       dim_mms_pricing_discount.discount_combine_rule discount_combine_rule,
+       dim_mms_pricing_discount.discount_type discount_type,
+       dim_mms_pricing_discount.discount_value discount_value,
+       dim_mms_pricing_discount.effective_from_date_time effective_from_date_time,
+       dim_mms_pricing_discount.effective_from_dim_date_key effective_from_dim_date_key,
+       dim_mms_pricing_discount.effective_thru_date_time effective_thru_date_time,
+       dim_mms_pricing_discount.effective_thru_dim_date_key effective_thru_dim_date_key,
+       dim_mms_pricing_discount.sales_commission_percent sales_commission_percent,
+       dim_mms_pricing_discount.sales_promotion_pos_display_text sales_promotion_pos_display_text,
+       dim_mms_pricing_discount.sales_promotion_receipt_text sales_promotion_receipt_text,
+       dim_mms_pricing_discount.service_commission_percent service_commission_percent
+  from dbo.dim_mms_pricing_discount;

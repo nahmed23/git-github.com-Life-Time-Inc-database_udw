@@ -1,0 +1,31 @@
+﻿CREATE TABLE [dbo].[s_ec_free_programs] (
+    [s_ec_free_programs_id] BIGINT          IDENTITY (1, 1) NOT NULL,
+    [bk_hash]               CHAR (32)       NOT NULL,
+    [program_image]         NVARCHAR (2000) NULL,
+    [program_name]          NVARCHAR (50)   NULL,
+    [program_description]   NVARCHAR (4000) NULL,
+    [featured]              BIT             NULL,
+    [priority]              INT             NULL,
+    [frequency]             NVARCHAR (50)   NULL,
+    [duration]              NVARCHAR (50)   NULL,
+    [equipment]             NVARCHAR (1000) NULL,
+    [exercise]              NVARCHAR (1000) NULL,
+    [level]                 NVARCHAR (50)   NULL,
+    [goal]                  NVARCHAR (50)   NULL,
+    [is_active]             BIT             NULL,
+    [created_date]          DATETIME        NULL,
+    [updated_date]          DATETIME        NULL,
+    [free_program_id]       INT             NULL,
+    [end_date]              DATETIME        NULL,
+    [dv_load_date_time]     DATETIME        NOT NULL,
+    [dv_r_load_source_id]   BIGINT          NOT NULL,
+    [dv_inserted_date_time] DATETIME        NOT NULL,
+    [dv_insert_user]        VARCHAR (50)    NOT NULL,
+    [dv_updated_date_time]  DATETIME        NULL,
+    [dv_update_user]        VARCHAR (50)    NULL,
+    [dv_hash]               CHAR (32)       NOT NULL,
+    [dv_deleted]            BIT             DEFAULT ((0)) NOT NULL,
+    [dv_batch_id]           BIGINT          NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([bk_hash]));
+

@@ -1,0 +1,6 @@
+﻿CREATE VIEW [marketing].[v_dim_membership_bridge_dim_mms_product_tier] AS select d_mms_membership_product_tier.dim_membership_bridge_dim_mms_product_tier_key dim_membership_bridge_dim_mms_product_tier_key,
+       d_mms_membership_product_tier.membership_product_tier_id membership_product_tier_id,
+       d_mms_membership_product_tier.d_mms_membership_product_tier_id d_dim_membership_bridge_dim_mms_product_tier_id,
+       d_mms_membership_product_tier.dim_mms_membership_key dim_mms_membership_key,
+       d_mms_membership_product_tier.dim_mms_product_tier_key dim_mms_product_tier_key
+  from dbo.d_mms_membership_product_tier;

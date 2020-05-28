@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[stage_ig_ig_dimension_Menu_Item_Dimension] (
+    [stage_ig_ig_dimension_Menu_Item_Dimension_id] BIGINT          NOT NULL,
+    [menu_item_dim_id]                             BIGINT          NULL,
+    [profit_center_dim_ent_level_id]               INT             NULL,
+    [menu_item_id]                                 INT             NULL,
+    [customer_id]                                  INT             NULL,
+    [ent_id]                                       INT             NULL,
+    [division_id]                                  INT             NULL,
+    [store_created_id]                             INT             NULL,
+    [menu_item_name]                               NVARCHAR (50)   NULL,
+    [sold_by_weight_flag]                          CHAR (1)        NULL,
+    [tare_weight]                                  DECIMAL (18, 4) NULL,
+    [sku_number]                                   NVARCHAR (30)   NULL,
+    [cost_amount]                                  DECIMAL (18, 4) NULL,
+    [product_class_id]                             INT             NULL,
+    [product_class_name]                           NVARCHAR (50)   NULL,
+    [revenue_category_id]                          INT             NULL,
+    [revenue_category_name]                        NVARCHAR (50)   NULL,
+    [tax_group_id]                                 INT             NULL,
+    [tax_group_name]                               NVARCHAR (50)   NULL,
+    [tax_included_flag]                            CHAR (1)        NULL,
+    [report_category_id]                           INT             NULL,
+    [report_category_name]                         NVARCHAR (50)   NULL,
+    [eff_date_from]                                DATETIME        NULL,
+    [eff_date_to]                                  DATETIME        NULL,
+    [product_class_default_revenue_category_id]    INT             NULL,
+    [dv_batch_id]                                  BIGINT          NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = ROUND_ROBIN);
+

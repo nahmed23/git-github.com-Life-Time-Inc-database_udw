@@ -1,0 +1,20 @@
+﻿CREATE VIEW [marketing].[v_fact_mms_package_adjustment]
+AS select fact_mms_package_adjustment.adjusted_date_time adjusted_date_time,
+       fact_mms_package_adjustment.adjusted_dim_date_key adjusted_dim_date_key,
+       fact_mms_package_adjustment.adjusted_dim_time_key adjusted_dim_time_key,
+       fact_mms_package_adjustment.adjustment_comment adjustment_comment,
+       fact_mms_package_adjustment.adjustment_dim_employee_key adjustment_dim_employee_key,
+       fact_mms_package_adjustment.adjustment_mms_tran_id adjustment_mms_tran_id,
+       fact_mms_package_adjustment.adjustment_type_dim_description_key adjustment_type_dim_description_key,
+       fact_mms_package_adjustment.dim_mms_member_key dim_mms_member_key,
+       fact_mms_package_adjustment.dim_mms_product_key dim_mms_product_key,
+       fact_mms_package_adjustment.fact_mms_package_adjustment_key fact_mms_package_adjustment_key,
+       fact_mms_package_adjustment.fact_mms_package_key fact_mms_package_key,
+       fact_mms_package_adjustment.fact_mms_sales_transaction_key fact_mms_sales_transaction_key,
+       fact_mms_package_adjustment.number_of_sessions_adjusted number_of_sessions_adjusted,
+       fact_mms_package_adjustment.package_adjustment_amount package_adjustment_amount,
+       fact_mms_package_adjustment.package_adjustment_id package_adjustment_id,
+       fact_mms_package_adjustment.package_entered_dim_club_key package_entered_dim_club_key,
+       fact_mms_package_adjustment.package_entered_dim_date_key package_entered_dim_date_key,
+       fact_mms_package_adjustment.package_entered_dim_time_key package_entered_dim_time_key
+  from dbo.fact_mms_package_adjustment;

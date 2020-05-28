@@ -1,0 +1,11 @@
+﻿CREATE VIEW [sandbox].[v_mart_sw_membership_communication_preference]
+AS SELECT d_mms_membership_communication_preference.[membership_id]
+       , d_mms_membership_communication_preference.[val_communication_preference_id]
+       , d_mms_membership_communication_preference.[active_flag]
+       , r_mms_val_communication_preference.[description]
+       , [communication_preference_description] = [r_mms_val_communication_preference].[description]
+       , d_mms_membership_communication_preference.[dim_mms_membership_key]
+    FROM [dbo].[d_mms_membership_communication_preference]
+         INNER JOIN [dbo].[r_mms_val_communication_preference]
+           ON r_mms_val_communication_preference.[val_communication_preference_id] = d_mms_membership_communication_preference.[val_communication_preference_id]
+              AND r_mms_val_communication_preference.[dv_load_date_time] = '9999-12-31 00:00:00.000';

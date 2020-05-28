@@ -1,0 +1,3 @@
+﻿CREATE USER [LTMDM_User] WITHOUT LOGIN
+    WITH DEFAULT_SCHEMA = [Marketing];
+

@@ -1,0 +1,31 @@
+﻿CREATE TABLE [dbo].[fact_ptdssr_client_retention_detail] (
+    [fact_ptdssr_client_retention_detail_id]         BIGINT          IDENTITY (1, 1) NOT NULL,
+    [delivered_date_dim_date_key]                    VARCHAR (8)     NULL,
+    [delivered_dim_club_key]                         VARCHAR (32)    NULL,
+    [delivered_dim_employee_key]                     VARCHAR (32)    NULL,
+    [delivered_employee_id]                          INT             NULL,
+    [delivered_four_digit_year_dash_two_digit_month] VARCHAR (7)     NULL,
+    [delivered_month_starting_dim_date_key]          VARCHAR (8)     NULL,
+    [delivered_price]                                DECIMAL (26, 6) NULL,
+    [dim_member_key]                                 VARCHAR (32)    NULL,
+    [dim_mms_membership_key]                         VARCHAR (32)    NULL,
+    [dim_product_key]                                VARCHAR (32)    NULL,
+    [employee_home_dim_club_key]                     VARCHAR (32)    NULL,
+    [member_date_of_birth]                           DATETIME        NULL,
+    [member_first_name]                              VARCHAR (50)    NULL,
+    [member_last_name]                               VARCHAR (50)    NULL,
+    [one_on_one_pt_product_flag]                     VARCHAR (1)     NULL,
+    [product_description]                            VARCHAR (50)    NULL,
+    [product_dim_reporting_hierarchy_key]            VARCHAR (32)    NULL,
+    [report_date_dim_date_key]                       VARCHAR (8)     NULL,
+    [source_system]                                  VARCHAR (20)    NULL,
+    [dv_load_date_time]                              DATETIME        NULL,
+    [dv_load_end_date_time]                          DATETIME        NULL,
+    [dv_batch_id]                                    BIGINT          NOT NULL,
+    [dv_inserted_date_time]                          DATETIME        NOT NULL,
+    [dv_insert_user]                                 VARCHAR (50)    NOT NULL,
+    [dv_updated_date_time]                           DATETIME        NULL,
+    [dv_update_user]                                 VARCHAR (50)    NULL
+)
+WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = REPLICATE);
+

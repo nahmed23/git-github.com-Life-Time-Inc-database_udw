@@ -1,0 +1,2 @@
+﻿CREATE USER [SEC-DB-Reporting-Execute] FOR EXTERNAL PROVIDER;
+

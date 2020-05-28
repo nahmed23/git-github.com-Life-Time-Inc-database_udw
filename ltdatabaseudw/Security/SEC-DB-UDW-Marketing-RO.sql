@@ -1,0 +1,3 @@
+﻿CREATE USER [SEC-DB-UDW-Marketing-RO] FOR EXTERNAL PROVIDER
+    WITH DEFAULT_SCHEMA = [<marketing>];
+

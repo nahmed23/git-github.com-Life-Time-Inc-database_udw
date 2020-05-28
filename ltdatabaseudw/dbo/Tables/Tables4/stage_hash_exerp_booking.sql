@@ -1,0 +1,33 @@
+﻿CREATE TABLE [dbo].[stage_hash_exerp_booking] (
+    [stage_hash_exerp_booking_id] BIGINT         IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                     CHAR (32)      NOT NULL,
+    [id]                          VARCHAR (4000) NULL,
+    [name]                        VARCHAR (4000) NULL,
+    [color]                       VARCHAR (4000) NULL,
+    [start_datetime]              DATETIME       NULL,
+    [activity_id]                 INT            NULL,
+    [stop_datetime]               DATETIME       NULL,
+    [creation_datetime]           DATETIME       NULL,
+    [state]                       VARCHAR (4000) NULL,
+    [center_id]                   INT            NULL,
+    [ets]                         BIGINT         NULL,
+    [class_capacity]              INT            NULL,
+    [waiting_list_capacity]       INT            NULL,
+    [cancel_datetime]             DATETIME       NULL,
+    [cancel_reason]               VARCHAR (4000) NULL,
+    [main_booking_id]             VARCHAR (4000) NULL,
+    [max_capacity_override]       INT            NULL,
+    [description]                 VARCHAR (4000) NULL,
+    [comment]                     VARCHAR (4000) NULL,
+    [single_cancellation]         BIT            NULL,
+    [strict_age_limit]            INT            NULL,
+    [minimum_age]                 INT            NULL,
+    [maximum_age]                 INT            NULL,
+    [minimum_age_unit]            VARCHAR (4000) NULL,
+    [maximum_age_unit]            VARCHAR (4000) NULL,
+    [age_text]                    VARCHAR (4000) NULL,
+    [dv_load_date_time]           DATETIME       NOT NULL,
+    [dv_batch_id]                 BIGINT         NOT NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([bk_hash]));
+

@@ -1,0 +1,2 @@
+﻿CREATE USER [PRD_DataDevOpsSrvc] WITHOUT LOGIN;
+

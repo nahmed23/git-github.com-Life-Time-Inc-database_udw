@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dbo].[dim_fitmetrix_appointment] (
+    [dim_fitmetrix_appointment_id]        BIGINT        IDENTITY (1, 1) NOT NULL,
+    [appointment_id]                      INT           NULL,
+    [cancelled_flag]                      CHAR (1)      NULL,
+    [dim_boss_reservation_key]            CHAR (32)     NULL,
+    [dim_club_key]                        CHAR (32)     NULL,
+    [dim_employee_key]                    CHAR (32)     NULL,
+    [dim_exerp_booking_key]               VARCHAR (32)  NULL,
+    [dim_fitmetrix_activity_key]          CHAR (32)     NULL,
+    [dim_fitmetrix_appointment_key]       CHAR (32)     NULL,
+    [dim_fitmetrix_instructor_key]        CHAR (32)     NULL,
+    [dim_fitmetrix_location_key]          CHAR (32)     NULL,
+    [dim_fitmetrix_location_resource_key] CHAR (32)     NULL,
+    [end_dim_date_key]                    CHAR (8)      NULL,
+    [end_dim_time_key]                    INT           NULL,
+    [instructor_name]                     VARCHAR (255) NULL,
+    [max_capacity]                        INT           NULL,
+    [name]                                VARCHAR (255) NULL,
+    [start_dim_date_key]                  CHAR (8)      NULL,
+    [start_dim_time_key]                  INT           NULL,
+    [total_booked]                        INT           NULL,
+    [wait_list_available_flag]            CHAR (1)      NULL,
+    [dv_load_date_time]                   DATETIME      NULL,
+    [dv_load_end_date_time]               DATETIME      NULL,
+    [dv_batch_id]                         BIGINT        NOT NULL,
+    [dv_inserted_date_time]               DATETIME      NOT NULL,
+    [dv_insert_user]                      VARCHAR (50)  NOT NULL,
+    [dv_updated_date_time]                DATETIME      NULL,
+    [dv_update_user]                      VARCHAR (50)  NULL
+)
+WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = HASH([dim_fitmetrix_appointment_key]));
+

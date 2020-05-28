@@ -1,0 +1,23 @@
+﻿CREATE VIEW [marketing].[v_fact_boss_daily_roster]
+AS select fact_boss_daily_roster.asi_player_id asi_player_id,
+       fact_boss_daily_roster.attendance_checked_in_flag attendance_checked_in_flag,
+       fact_boss_daily_roster.check_in_dim_date_key check_in_dim_date_key,
+       fact_boss_daily_roster.check_in_dim_time_key check_in_dim_time_key,
+       fact_boss_daily_roster.dim_boss_reservation_key dim_boss_reservation_key,
+       fact_boss_daily_roster.dim_mms_member_key dim_mms_member_key,
+       fact_boss_daily_roster.fact_boss_daily_roster_key fact_boss_daily_roster_key,
+       fact_boss_daily_roster.fact_mms_sales_transaction_key fact_mms_sales_transaction_key,
+       fact_boss_daily_roster.instructor_type instructor_type,
+       fact_boss_daily_roster.meeting_dim_date_key meeting_dim_date_key,
+       fact_boss_daily_roster.member_code member_code,
+       fact_boss_daily_roster.member_flag member_flag,
+       fact_boss_daily_roster.mms_swipe_flag mms_swipe_flag,
+       fact_boss_daily_roster.notes notes,
+       fact_boss_daily_roster.paid paid,
+       fact_boss_daily_roster.player_cancel_dim_date_key player_cancel_dim_date_key,
+       fact_boss_daily_roster.player_checked_in_flag player_checked_in_flag,
+       fact_boss_daily_roster.player_start_dim_date_key player_start_dim_date_key,
+       fact_boss_daily_roster.primary_dim_employee_key primary_dim_employee_key,
+       fact_boss_daily_roster.reservation_id reservation_id,
+       fact_boss_daily_roster.secondary_dim_employee_key secondary_dim_employee_key
+  from dbo.fact_boss_daily_roster;

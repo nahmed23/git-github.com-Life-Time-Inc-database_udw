@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dbo].[fact_trainerize_measurement] (
+    [fact_trainerize_measurement_id]  BIGINT          IDENTITY (1, 1) NOT NULL,
+    [active_flag]                     CHAR (1)        NULL,
+    [certified_flag]                  CHAR (1)        NULL,
+    [created_by_dim_employee_key]     VARCHAR (32)    NULL,
+    [created_dim_date_key]            VARCHAR (8)     NULL,
+    [dim_club_key]                    VARCHAR (32)    NULL,
+    [dim_mms_member_key]              VARCHAR (32)    NULL,
+    [dim_trainerize_measure_key]      VARCHAR (32)    NULL,
+    [fact_trainerize_measurement_key] VARCHAR (32)    NULL,
+    [measure_value]                   NVARCHAR (100)  NULL,
+    [measurement_dim_date_key]        VARCHAR (8)     NULL,
+    [measurement_dim_time_key]        INT             NULL,
+    [measurement_id]                  VARCHAR (36)    NULL,
+    [measurement_recording_id]        VARCHAR (36)    NULL,
+    [metadata]                        NVARCHAR (4000) NULL,
+    [modified_by_dim_employee_key]    VARCHAR (32)    NULL,
+    [modified_dim_date_key]           VARCHAR (8)     NULL,
+    [notes]                           NVARCHAR (500)  NULL,
+    [source]                          NVARCHAR (100)  NULL,
+    [unit]                            NVARCHAR (4000) NULL,
+    [user_program_status_id]          VARCHAR (36)    NULL,
+    [dv_load_date_time]               DATETIME        NULL,
+    [dv_load_end_date_time]           DATETIME        NULL,
+    [dv_batch_id]                     BIGINT          NOT NULL,
+    [dv_inserted_date_time]           DATETIME        NOT NULL,
+    [dv_insert_user]                  VARCHAR (50)    NOT NULL,
+    [dv_updated_date_time]            DATETIME        NULL,
+    [dv_update_user]                  VARCHAR (50)    NULL
+)
+WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = HASH([fact_trainerize_measurement_key]));
+

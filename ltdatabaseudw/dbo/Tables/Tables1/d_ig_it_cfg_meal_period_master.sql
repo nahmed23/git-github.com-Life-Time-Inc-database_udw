@@ -1,0 +1,31 @@
+﻿CREATE TABLE [dbo].[d_ig_it_cfg_meal_period_master] (
+    [d_ig_it_cfg_meal_period_master_id]  BIGINT        IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                            CHAR (32)     NOT NULL,
+    [ent_id]                             INT           NULL,
+    [meal_period_id]                     INT           NULL,
+    [default_check_type_id]              INT           NULL,
+    [default_dim_cafe_check_type_key]    VARCHAR (32)  NULL,
+    [default_price_level_id]             INT           NULL,
+    [dim_cafe_meal_period_key]           VARCHAR (32)  NULL,
+    [enterprise_created_id]              INT           NULL,
+    [entertainment_flag]                 CHAR (1)      NULL,
+    [meal_period_abbr_1]                 NVARCHAR (7)  NULL,
+    [meal_period_abbr_2]                 NVARCHAR (7)  NULL,
+    [meal_period_name]                   NVARCHAR (16) NULL,
+    [meal_period_sec_id]                 INT           NULL,
+    [receipt_code]                       NVARCHAR (3)  NULL,
+    [row_version]                        BINARY (8)    NULL,
+    [secondary_dim_cafe_meal_period_key] VARCHAR (32)  NULL,
+    [store_id]                           INT           NULL,
+    [p_ig_it_cfg_meal_period_master_id]  BIGINT        NOT NULL,
+    [deleted_flag]                       INT           NULL,
+    [dv_load_date_time]                  DATETIME      NULL,
+    [dv_load_end_date_time]              DATETIME      NULL,
+    [dv_batch_id]                        BIGINT        NOT NULL,
+    [dv_inserted_date_time]              DATETIME      NOT NULL,
+    [dv_insert_user]                     VARCHAR (50)  NOT NULL,
+    [dv_updated_date_time]               DATETIME      NULL,
+    [dv_update_user]                     VARCHAR (50)  NULL
+)
+WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = HASH([bk_hash]));
+

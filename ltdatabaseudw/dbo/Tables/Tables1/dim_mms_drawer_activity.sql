@@ -1,0 +1,30 @@
+﻿CREATE TABLE [dbo].[dim_mms_drawer_activity] (
+    [dim_mms_drawer_activity_id]          BIGINT        IDENTITY (1, 1) NOT NULL,
+    [dim_mms_drawer_activity_key]         CHAR (32)     NULL,
+    [closed_business_dim_date_key]        INT           NULL,
+    [closed_dim_date_key]                 INT           NULL,
+    [closed_dim_employee_key]             CHAR (32)     NULL,
+    [closed_dim_time_key]                 INT           NULL,
+    [closed_flag]                         CHAR (1)      NULL,
+    [closed_flag_set_in_edw_dim_date_key] INT           NULL,
+    [closing_comments]                    VARCHAR (527) NULL,
+    [dim_club_key]                        CHAR (32)     NULL,
+    [drawer_activity_id]                  INT           NULL,
+    [open_dim_date_key]                   INT           NULL,
+    [open_dim_employee_key]               CHAR (32)     NULL,
+    [open_dim_time_key]                   INT           NULL,
+    [open_flag]                           CHAR (1)      NULL,
+    [pending_dim_date_key]                INT           NULL,
+    [pending_dim_employee_key]            CHAR (32)     NULL,
+    [pending_dim_time_key]                INT           NULL,
+    [pending_flag]                        CHAR (1)      NULL,
+    [dv_load_date_time]                   DATETIME      NULL,
+    [dv_load_end_date_time]               DATETIME      NULL,
+    [dv_batch_id]                         BIGINT        NULL,
+    [dv_inserted_date_time]               DATETIME      NOT NULL,
+    [dv_insert_user]                      VARCHAR (50)  NOT NULL,
+    [dv_updated_date_time]                DATETIME      NULL,
+    [dv_update_user]                      VARCHAR (50)  NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([dim_mms_drawer_activity_key]));
+

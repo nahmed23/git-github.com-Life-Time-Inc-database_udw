@@ -1,0 +1,2 @@
+﻿CREATE USER [DataScienceUser] WITHOUT LOGIN;
+

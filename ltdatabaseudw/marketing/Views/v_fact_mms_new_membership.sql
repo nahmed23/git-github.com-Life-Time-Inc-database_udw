@@ -1,0 +1,16 @@
+﻿CREATE VIEW [marketing].[v_fact_mms_new_membership] AS select fact_mms_new_membership.corporate_membership_flag corporate_membership_flag,
+       fact_mms_new_membership.created_date_time_key created_date_time_key,
+       fact_mms_new_membership.dim_mms_member_key dim_mms_member_key,
+       fact_mms_new_membership.dim_mms_membership_type_key dim_mms_membership_type_key,
+       fact_mms_new_membership.enrollment_fee enrollment_fee,
+       fact_mms_new_membership.fact_mms_new_membership_key fact_mms_new_membership_key,
+       fact_mms_new_membership.home_dim_club_key home_dim_club_key,
+       fact_mms_new_membership.include_in_dssr_flag include_in_dssr_flag,
+       fact_mms_new_membership.local_currency_dim_plan_exchange_rate_key local_currency_dim_plan_exchange_rate_key,
+       fact_mms_new_membership.local_currency_monthly_average_dim_exchange_rate_key local_currency_monthly_average_dim_exchange_rate_key,
+       fact_mms_new_membership.membership_id membership_id,
+       fact_mms_new_membership.original_currency_code original_currency_code,
+       fact_mms_new_membership.primary_sales_dim_employee_key primary_sales_dim_employee_key,
+       fact_mms_new_membership.usd_dim_plan_exchange_rate_key usd_dim_plan_exchange_rate_key,
+       fact_mms_new_membership.usd_monthly_average_dim_exchange_rate_key usd_monthly_average_dim_exchange_rate_key
+  from dbo.fact_mms_new_membership;

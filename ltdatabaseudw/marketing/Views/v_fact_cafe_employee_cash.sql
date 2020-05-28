@@ -1,0 +1,23 @@
+﻿CREATE VIEW [marketing].[v_fact_cafe_employee_cash]
+AS select d_ig_it_trn_emp_cash_BD.fact_cafe_employee_cash_key fact_cafe_employee_cash_key,
+       d_ig_it_trn_emp_cash_BD.bus_day_id bus_day_id,
+       d_ig_it_trn_emp_cash_BD.cashier_emp_id cashier_emp_id,
+       d_ig_it_trn_emp_cash_BD.meal_period_id meal_period_id,
+       d_ig_it_trn_emp_cash_BD.profit_center_id profit_center_id,
+       d_ig_it_trn_emp_cash_BD.tender_id tender_id,
+       d_ig_it_trn_emp_cash_BD.business_day_end_date_time business_day_end_date_time,
+       d_ig_it_trn_emp_cash_BD.business_day_end_dim_date_key business_day_end_dim_date_key,
+       d_ig_it_trn_emp_cash_BD.business_day_end_dim_time_key business_day_end_dim_time_key,
+       d_ig_it_trn_emp_cash_BD.business_day_start_date_time business_day_start_date_time,
+       d_ig_it_trn_emp_cash_BD.business_day_start_dim_date_key business_day_start_dim_date_key,
+       d_ig_it_trn_emp_cash_BD.business_day_start_dim_time_key business_day_start_dim_time_key,
+       d_ig_it_trn_emp_cash_BD.cash_drop_amount cash_drop_amount,
+       d_ig_it_trn_emp_cash_BD.cashier_dim_cafe_employee_key cashier_dim_cafe_employee_key,
+       d_ig_it_trn_emp_cash_BD.dim_cafe_business_day_dates_key dim_cafe_business_day_dates_key,
+       d_ig_it_trn_emp_cash_BD.dim_cafe_meal_period_key dim_cafe_meal_period_key,
+       d_ig_it_trn_emp_cash_BD.dim_cafe_payment_type_key dim_cafe_payment_type_key,
+       d_ig_it_trn_emp_cash_BD.dim_cafe_profit_center_key dim_cafe_profit_center_key,
+       d_ig_it_trn_emp_cash_BD.loan_amount loan_amount,
+       d_ig_it_trn_emp_cash_BD.paid_out_amount paid_out_amount,
+       d_ig_it_trn_emp_cash_BD.withdrawal_amount withdrawal_amount
+  from dbo.d_ig_it_trn_emp_cash_BD;

@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dbo].[fact_mms_gift_card_issuance] (
+    [fact_mms_gift_card_issuance_id]                                                  BIGINT          IDENTITY (1, 1) NOT NULL,
+    [dim_mms_drawer_activity_key]                                                     CHAR (32)       NULL,
+    [dim_mms_member_key]                                                              CHAR (32)       NULL,
+    [dim_mms_product_key]                                                             CHAR (32)       NULL,
+    [fact_mms_gift_card_issuance_key]                                                 CHAR (32)       NULL,
+    [issuance_amount]                                                                 DECIMAL (26, 6) NULL,
+    [original_currency_code]                                                          CHAR (3)        NULL,
+    [post_dim_date_key]                                                               CHAR (8)        NULL,
+    [post_dim_time_key]                                                               CHAR (8)        NULL,
+    [sales_entered_dim_employee_key]                                                  CHAR (32)       NULL,
+    [sales_transaction_item_amount]                                                   DECIMAL (26, 6) NULL,
+    [sales_transaction_item_quantity]                                                 INT             NULL,
+    [sales_transaction_receipt_comment]                                               VARCHAR (255)   NULL,
+    [tran_item_gift_card_issuance_id]                                                 INT             NULL,
+    [tran_item_id]                                                                    INT             NULL,
+    [transaction_reporting_dim_club_key]                                              CHAR (32)       NULL,
+    [transaction_reporting_local_currency_monthly_average_dim_exchange_rate_key]      CHAR (32)       NULL,
+    [transaction_reporting_local_currency_monthly_average_dim_plan_exchange_rate_key] CHAR (32)       NULL,
+    [usd_dim_plan_exchange_rate_key]                                                  CHAR (32)       NULL,
+    [usd_monthly_average_dim_exchange_rate_key]                                       CHAR (32)       NULL,
+    [voided_flag]                                                                     CHAR (1)        NULL,
+    [dv_load_date_time]                                                               DATETIME        NULL,
+    [dv_load_end_date_time]                                                           DATETIME        NULL,
+    [dv_batch_id]                                                                     BIGINT          NOT NULL,
+    [dv_inserted_date_time]                                                           DATETIME        NOT NULL,
+    [dv_insert_user]                                                                  VARCHAR (50)    NOT NULL,
+    [dv_updated_date_time]                                                            DATETIME        NULL,
+    [dv_update_user]                                                                  VARCHAR (50)    NULL
+)
+WITH (HEAP, DISTRIBUTION = HASH([fact_mms_gift_card_issuance_key]));
+

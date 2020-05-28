@@ -1,0 +1,21 @@
+﻿CREATE VIEW [marketing].[v_dim_exerp_freeze_period]
+AS select d_exerp_freeze_period.freeze_period_id freeze_period_id,
+       d_exerp_freeze_period.cancel_dim_date_key cancel_dim_date_key,
+       d_exerp_freeze_period.cancel_dim_time_key cancel_dim_time_key,
+       d_exerp_freeze_period.center_id center_id,
+       d_exerp_freeze_period.d_exerp_subscription_center_bk_hash d_exerp_subscription_center_bk_hash,
+       d_exerp_freeze_period.dim_club_key dim_club_key,
+       d_exerp_freeze_period.dim_exerp_subscription_key dim_exerp_subscription_key,
+       d_exerp_freeze_period.end_dim_date_key end_dim_date_key,
+       d_exerp_freeze_period.end_dim_time_key end_dim_time_key,
+       d_exerp_freeze_period.entry_dim_date_key entry_dim_date_key,
+       d_exerp_freeze_period.entry_dim_time_key entry_dim_time_key,
+       d_exerp_freeze_period.ets ets,
+       d_exerp_freeze_period.freeze_period_reason freeze_period_reason,
+       d_exerp_freeze_period.freeze_period_state freeze_period_state,
+       d_exerp_freeze_period.freeze_period_type freeze_period_type,
+       d_exerp_freeze_period.start_dim_date_key start_dim_date_key,
+       d_exerp_freeze_period.start_dim_time_key start_dim_time_key,
+       d_exerp_freeze_period.subscription_center_id subscription_center_id,
+       d_exerp_freeze_period.subscription_id subscription_id
+  from dbo.d_exerp_freeze_period;

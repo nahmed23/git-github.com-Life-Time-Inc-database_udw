@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dbo].[l_magento_sales_order_item] (
+    [l_magento_sales_order_item_id] BIGINT         IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                       CHAR (32)      NOT NULL,
+    [item_id]                       INT            NULL,
+    [order_id]                      INT            NULL,
+    [parent_item_id]                INT            NULL,
+    [store_id]                      INT            NULL,
+    [product_id]                    INT            NULL,
+    [ext_order_item_id]             NVARCHAR (255) NULL,
+    [gift_message_id]               INT            NULL,
+    [gift_registry_item_id]         INT            NULL,
+    [m1_order_item_id]              INT            NULL,
+    [wd_region_id]                  INT            NULL,
+    [wd_cost_center_id]             INT            NULL,
+    [wd_offering_id]                INT            NULL,
+    [wd_spending_id]                INT            NULL,
+    [wd_revenue_id]                 INT            NULL,
+    [email_template_id]             INT            NULL,
+    [mms_id]                        VARCHAR (8000) NULL,
+    [mms_club_id]                   VARCHAR (8000) NULL,
+    [dv_load_date_time]             DATETIME       NOT NULL,
+    [dv_r_load_source_id]           BIGINT         NOT NULL,
+    [dv_inserted_date_time]         DATETIME       NOT NULL,
+    [dv_insert_user]                VARCHAR (50)   NOT NULL,
+    [dv_updated_date_time]          DATETIME       NULL,
+    [dv_update_user]                VARCHAR (50)   NULL,
+    [dv_hash]                       CHAR (32)      NOT NULL,
+    [dv_deleted]                    BIT            DEFAULT ((0)) NOT NULL,
+    [dv_batch_id]                   BIGINT         NOT NULL
+)
+WITH (CLUSTERED INDEX([bk_hash]), DISTRIBUTION = HASH([bk_hash]));
+

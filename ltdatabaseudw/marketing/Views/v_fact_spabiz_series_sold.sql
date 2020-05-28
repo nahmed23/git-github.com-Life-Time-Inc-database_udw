@@ -1,0 +1,18 @@
+﻿CREATE VIEW [marketing].[v_fact_spabiz_series_sold] AS select d_spabiz_series_sold.fact_spabiz_series_sold_key fact_spabiz_series_sold_key,
+       d_spabiz_series_sold.series_sold_id series_sold_id,
+       d_spabiz_series_sold.store_number store_number,
+       d_spabiz_series_sold.balance balance,
+       d_spabiz_series_sold.created_date_time created_date_time,
+       d_spabiz_series_sold.dim_spabiz_customer_key dim_spabiz_customer_key,
+       d_spabiz_series_sold.dim_spabiz_series_key dim_spabiz_series_key,
+       d_spabiz_series_sold.dim_spabiz_store_key dim_spabiz_store_key,
+       d_spabiz_series_sold.edit_date_time edit_date_time,
+       d_spabiz_series_sold.fact_spabiz_ticket_key fact_spabiz_ticket_key,
+       d_spabiz_series_sold.first_dim_spabiz_staff_key first_dim_spabiz_staff_key,
+       d_spabiz_series_sold.last_used_date_time last_used_date_time,
+       d_spabiz_series_sold.purchasing_dim_spabiz_customer_key purchasing_dim_spabiz_customer_key,
+       d_spabiz_series_sold.retail_price retail_price,
+       d_spabiz_series_sold.second_dim_spabiz_staff_key second_dim_spabiz_staff_key,
+       d_spabiz_series_sold.status_dim_description_key status_dim_description_key,
+       d_spabiz_series_sold.status_id status_id
+  from dbo.d_spabiz_series_sold;

@@ -1,0 +1,17 @@
+﻿CREATE VIEW [marketing].[v_dim_lt_bucks_product_options] AS select d_lt_bucks_product_options.dim_lt_bucks_product_options_key dim_lt_bucks_product_options_key,
+       d_lt_bucks_product_options.poption_id poption_id,
+       d_lt_bucks_product_options.dim_lt_bucks_product_key dim_lt_bucks_product_key,
+       d_lt_bucks_product_options.dim_mms_product_key dim_mms_product_key,
+       d_lt_bucks_product_options.last_modified_timestamp last_modified_timestamp,
+       d_lt_bucks_product_options.last_modified_timestamp_dim_date_key last_modified_timestamp_dim_date_key,
+       d_lt_bucks_product_options.last_modified_timestamp_dim_time_key last_modified_timestamp_dim_time_key,
+       d_lt_bucks_product_options.mms_multiplier mms_multiplier,
+       d_lt_bucks_product_options.poption_active_flag poption_active_flag,
+       d_lt_bucks_product_options.poption_expiration_days poption_expiration_days,
+       d_lt_bucks_product_options.poption_timestamp poption_timestamp,
+       d_lt_bucks_product_options.poption_timestamp_dim_date_key poption_timestamp_dim_date_key,
+       d_lt_bucks_product_options.poption_timestamp_dim_time_key poption_timestamp_dim_time_key,
+       d_lt_bucks_product_options.price price,
+       d_lt_bucks_product_options.product_option_description product_option_description,
+       d_lt_bucks_product_options.product_option_name product_option_name
+  from dbo.d_lt_bucks_product_options;

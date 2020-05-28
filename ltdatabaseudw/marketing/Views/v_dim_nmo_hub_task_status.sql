@@ -1,0 +1,23 @@
+﻿CREATE VIEW [marketing].[v_dim_nmo_hub_task_status]
+AS select dim_nmo_hub_task_status.activation_dim_date_key activation_dim_date_key,
+       dim_nmo_hub_task_status.activation_dim_time_key activation_dim_time_key,
+       dim_nmo_hub_task_status.created_dim_date_key created_dim_date_key,
+       dim_nmo_hub_task_status.created_dim_time_key created_dim_time_key,
+       dim_nmo_hub_task_status.creator_party_id creator_party_id,
+       dim_nmo_hub_task_status.department_title department_title,
+       dim_nmo_hub_task_status.dim_club_key dim_club_key,
+       dim_nmo_hub_task_status.dim_employee_key dim_employee_key,
+       dim_nmo_hub_task_status.dim_mms_member_key dim_mms_member_key,
+       dim_nmo_hub_task_status.dim_nmo_hub_task_department_key dim_nmo_hub_task_department_key,
+       dim_nmo_hub_task_status.dim_nmo_hub_task_key dim_nmo_hub_task_key,
+       dim_nmo_hub_task_status.dim_nmo_hub_task_status_key dim_nmo_hub_task_status_key,
+       dim_nmo_hub_task_status.dim_nmo_hub_task_type_key dim_nmo_hub_task_type_key,
+       dim_nmo_hub_task_status.due_dim_date_key due_dim_date_key,
+       dim_nmo_hub_task_status.due_dim_time_key due_dim_time_key,
+       dim_nmo_hub_task_status.expiration_dim_date_key expiration_dim_date_key,
+       dim_nmo_hub_task_status.expiration_dim_time_key expiration_dim_time_key,
+       dim_nmo_hub_task_status.party_id party_id,
+       dim_nmo_hub_task_status.resolution_dim_date_key resolution_dim_date_key,
+       dim_nmo_hub_task_status.resolution_dim_time_key resolution_dim_time_key,
+       dim_nmo_hub_task_status.status status
+  from dbo.dim_nmo_hub_task_status;

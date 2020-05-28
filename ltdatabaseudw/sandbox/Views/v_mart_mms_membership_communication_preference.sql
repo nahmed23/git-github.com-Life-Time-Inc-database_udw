@@ -1,0 +1,17 @@
+﻿CREATE VIEW [sandbox].[v_mart_mms_membership_communication_preference]
+AS SELECT DIM.[membership_communication_preference_id]
+     , DIM.[membership_id]
+     , DIM.[val_communication_preference_id]
+     , DIM.[active_flag]
+     , DIM.[inserted_date_time]
+     , DIM.[updated_date_time]
+     , DIM.[dim_mms_membership_key]
+     , DIM.[bk_hash]
+     , DIM.[p_mms_membership_communication_preference_id]
+     , DIM.[dv_load_date_time]
+     , DIM.[dv_batch_id]
+     , DIM.[deleted_flag]
+     --, [dv_hash] = CONVERT(varchar(32), HASHBYTES('MD5', (LNK.[dv_hash] + SAT.[dv_hash])),2)
+     --, [l_hash] = LNK.[dv_hash]
+     --, [s_hash] = SAT.[dv_hash]
+  FROM [dbo].[d_mms_membership_communication_preference] DIM;

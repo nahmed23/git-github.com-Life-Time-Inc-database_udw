@@ -1,0 +1,32 @@
+﻿CREATE TABLE [dbo].[fact_hybris_sales_transaction_item] (
+    [fact_hybris_sales_transaction_item_key]    CHAR (32)       NULL,
+    [commission_dim_mms_employee_key]           CHAR (32)       NULL,
+    [currency_code]                             CHAR (5)        NULL,
+    [dim_club_key]                              CHAR (32)       NULL,
+    [dim_hybris_product_key]                    CHAR (32)       NULL,
+    [dim_mms_member_key]                        CHAR (32)       NULL,
+    [dim_mms_product_key]                       CHAR (32)       NULL,
+    [discount_amount]                           DECIMAL (26, 6) NULL,
+    [method_of_pay]                             CHAR (32)       NULL,
+    [mms_tran_id]                               INT             NULL,
+    [order_created_date_time]                   DATETIME        NULL,
+    [order_delivery_cost]                       DECIMAL (26, 6) NULL,
+    [order_entry_base_price]                    DECIMAL (26, 6) NULL,
+    [order_entry_created_date_time]             DATETIME        NULL,
+    [order_entry_modified_date_time]            DATETIME        NULL,
+    [order_entry_number]                        BIGINT          NULL,
+    [order_entry_quantity]                      INT             NULL,
+    [order_entry_total_price]                   DECIMAL (26, 6) NULL,
+    [order_modified_date_time]                  DATETIME        NULL,
+    [order_number]                              VARCHAR (30)    NULL,
+    [order_total_discounts]                     DECIMAL (26, 6) NULL,
+    [order_total_price]                         DECIMAL (26, 6) NULL,
+    [order_total_tax]                           DECIMAL (26, 6) NULL,
+    [refund_flag]                               CHAR (1)        NULL,
+    [refund_reason]                             CHAR (32)       NULL,
+    [tax_amount]                                DECIMAL (26, 6) NULL,
+    [usd_dim_plan_exchange_rate_key]            CHAR (32)       NULL,
+    [usd_monthly_average_dim_exchange_rate_key] CHAR (32)       NULL
+)
+WITH (HEAP, DISTRIBUTION = ROUND_ROBIN);
+

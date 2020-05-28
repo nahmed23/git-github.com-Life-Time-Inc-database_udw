@@ -1,0 +1,2 @@
+﻿CREATE USER [JumboPoolUser] WITHOUT LOGIN;
+

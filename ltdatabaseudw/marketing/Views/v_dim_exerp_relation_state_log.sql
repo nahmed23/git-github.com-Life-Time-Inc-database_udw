@@ -1,0 +1,20 @@
+﻿CREATE VIEW [marketing].[v_dim_exerp_relation_state_log]
+AS select d_exerp_relation_state_log.relation_state_log_id relation_state_log_id,
+       d_exerp_relation_state_log.center_id center_id,
+       d_exerp_relation_state_log.company_id company_id,
+       d_exerp_relation_state_log.d_exerp_relation_bk_hash d_exerp_relation_bk_hash,
+       d_exerp_relation_state_log.dim_club_key dim_club_key,
+       d_exerp_relation_state_log.dim_mms_company_key dim_mms_company_key,
+       d_exerp_relation_state_log.dim_mms_member_key dim_mms_member_key,
+       d_exerp_relation_state_log.ets ets,
+       d_exerp_relation_state_log.from_datetime from_datetime,
+       d_exerp_relation_state_log.from_dim_date_key from_dim_date_key,
+       d_exerp_relation_state_log.from_dim_time_key from_dim_time_key,
+       d_exerp_relation_state_log.person_id person_id,
+       d_exerp_relation_state_log.relation_id relation_id,
+       d_exerp_relation_state_log.relation_state_log_status relation_state_log_status,
+       d_exerp_relation_state_log.relation_state_log_type relation_state_log_type,
+       d_exerp_relation_state_log.relative_dim_mms_member_key relative_dim_mms_member_key,
+       d_exerp_relation_state_log.relative_id relative_id,
+       d_exerp_relation_state_log.relative_type relative_type
+  from dbo.d_exerp_relation_state_log;

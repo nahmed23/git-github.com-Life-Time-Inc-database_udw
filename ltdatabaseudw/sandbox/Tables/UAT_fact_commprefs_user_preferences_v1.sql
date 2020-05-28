@@ -1,0 +1,32 @@
+﻿CREATE TABLE [sandbox].[UAT_fact_commprefs_user_preferences_v1] (
+    [email_address]                NVARCHAR (4000) NULL,
+    [global_opt_in]                INT             NULL,
+    [invalid_bounce]               INT             NULL,
+    [promotional_opt_in]           INT             NULL,
+    [lt_insider_opt_in]            INT             NULL,
+    [flourish_opt_in]              INT             NULL,
+    [notifications_opt_in]         INT             NULL,
+    [global_opt_status_from_date]  DATETIME        NULL,
+    [invalid_bounce_date]          INT             NULL,
+    [first_sent_date]              DATETIME        NULL,
+    [last_sent_date]               DATETIME        NULL,
+    [last_open_date]               DATETIME        NULL,
+    [last_click_date]              DATETIME        NULL,
+    [last_engagement_date]         DATETIME        NULL,
+    [total_sent]                   INT             NULL,
+    [total_hard_bounces]           INT             NULL,
+    [last_bounce_date]             DATETIME        NULL,
+    [ae_last_sent_date]            DATETIME        NULL,
+    [ae_total_sent]                INT             NULL,
+    [el_last_sent_date]            DATETIME        NULL,
+    [el_total_sent]                INT             NULL,
+    [total_sent_after_last_engage] INT             NULL,
+    [no_engagement_3_months]       INT             NOT NULL,
+    [no_engagement_6_months]       INT             NOT NULL,
+    [no_engagement_12_months]      INT             NOT NULL,
+    [no_engagement_13_months]      INT             NOT NULL,
+    [dv_load_date_time]            DATETIME        NOT NULL,
+    [dv_batch_id]                  BIGINT          NOT NULL
+)
+WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = HASH([email_address]));
+

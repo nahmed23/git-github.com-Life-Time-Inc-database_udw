@@ -1,0 +1,31 @@
+﻿CREATE TABLE [dbo].[d_boss_asi_club_res] (
+    [d_boss_asi_club_res_id]      BIGINT       IDENTITY (1, 1) NOT NULL,
+    [bk_hash]                     CHAR (32)    NOT NULL,
+    [club_id]                     INT          NULL,
+    [resource_id]                 INT          NULL,
+    [capacity]                    INT          NULL,
+    [created_dim_date_key]        CHAR (8)     NULL,
+    [d_boss_asi_resource_bk_hash] CHAR (32)    NULL,
+    [empl_id]                     CHAR (6)     NULL,
+    [employee_id]                 INT          NULL,
+    [inactive_end_dim_date_key]   CHAR (8)     NULL,
+    [inactive_start_dim_date_key] CHAR (8)     NULL,
+    [resource]                    CHAR (25)    NULL,
+    [resource_type]               CHAR (25)    NULL,
+    [status]                      CHAR (1)     NULL,
+    [updated_dim_date_key]        CHAR (8)     NULL,
+    [web_active]                  CHAR (1)     NULL,
+    [web_enable]                  CHAR (1)     NULL,
+    [web_start_dim_date_key]      CHAR (8)     NULL,
+    [p_boss_asi_club_res_id]      BIGINT       NOT NULL,
+    [deleted_flag]                INT          NULL,
+    [dv_load_date_time]           DATETIME     NULL,
+    [dv_load_end_date_time]       DATETIME     NULL,
+    [dv_batch_id]                 BIGINT       NOT NULL,
+    [dv_inserted_date_time]       DATETIME     NOT NULL,
+    [dv_insert_user]              VARCHAR (50) NOT NULL,
+    [dv_updated_date_time]        DATETIME     NULL,
+    [dv_update_user]              VARCHAR (50) NULL
+)
+WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = HASH([bk_hash]));
+
